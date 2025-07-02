@@ -833,32 +833,6 @@ const Index = () => {
                           {isPlaying ? 'Playing...' : 'Play Tone'}
                         </button>
 
-                        {/* Add Buy Button */}
-                        <button
-                          onClick={() => {
-                            // TODO: Implement purchase functionality
-                            alert(`Purchase ${tone} - Feature coming soon after payment setup!`);
-                          }}
-                          style={{
-                            width: '100%',
-                            background: 'linear-gradient(45deg, #059669, #0d9488)',
-                            color: 'white',
-                            border: 'none',
-                            padding: '12px',
-                            borderRadius: '10px',
-                            cursor: 'pointer',
-                            fontSize: '14px',
-                            fontWeight: '500',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            gap: '8px',
-                            marginTop: '8px'
-                          }}
-                        >
-                          <span style={{ fontSize: '16px' }}>💳</span>
-                          Buy Tone - $4.99
-                        </button>
                       </div>
                     );
                   })}
