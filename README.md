@@ -1,6 +1,17 @@
 # 🎵 VitalTones - Advanced Binaural Beats Platform
 
 ![VitalTones Banner](https://img.shields.io/badge/VitalTones-Premium%20Free-brightgreen?style=for-the-badge&logo=music)
+![Owner](https://img.shields.io/badge/Owner-radosavlevici210-blue?style=for-the-badge&logo=github)
+![License](https://img.shields.io/badge/License-Proprietary-red?style=for-the-badge&logo=lock)
+
+## 🔒 Ownership & Copyright
+
+**© 2024 radosavlevici210 - All Rights Reserved**
+
+This is proprietary software owned exclusively by **radosavlevici210**. 
+- GitHub Owner: [@radosavlevici210](https://github.com/radosavlevici210)
+- Unauthorized use, reproduction, or distribution is strictly prohibited
+- All intellectual property rights reserved
 
 ## 🌟 Overview
 
@@ -183,32 +194,58 @@ npm run build
 # Deploy dist/ folder to your hosting platform
 ```
 
-## 🤝 Contributing
+## 🔧 Development & Access
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
+**⚠️ RESTRICTED ACCESS**
+- Development access limited to authorized personnel only
+- Repository owner: **radosavlevici210**
+- Unauthorized forks or contributions will be reported
 
-## 📄 License
+### For Authorized Development Only
+```bash
+# Authorized access only - Contact radosavlevici210 for permissions
+git clone https://github.com/radosavlevici210/vitaltones.git
+cd vitaltones
+npm install
+npm run dev
+```
 
-This project is open source and available under the [MIT License](LICENSE).
+### Security Notice
+This repository is monitored for unauthorized access. All contributions must be pre-approved by the owner.
 
-## 🔗 Links
+## 📄 License & Legal
 
+**PROPRIETARY SOFTWARE - ALL RIGHTS RESERVED**
+
+This software is the exclusive property of **radosavlevici210**. 
+
+- **Owner**: radosavlevici210 (GitHub: [@radosavlevici210](https://github.com/radosavlevici210))
+- **License**: Proprietary - No public license granted
+- **Copyright**: © 2024 radosavlevici210. All rights reserved.
+- **Usage**: Private use only - Commercial use prohibited without written permission
+- **Distribution**: Redistribution strictly forbidden
+- **Modifications**: Derivative works not permitted without authorization
+
+⚠️ **LEGAL NOTICE**: This repository and all its contents are protected by copyright law. Unauthorized access, use, copying, or distribution may result in legal action.
+
+## 🔗 Official Links
+
+- **Official Repository**: [github.com/radosavlevici210/vitaltones](https://github.com/radosavlevici210/vitaltones)
+- **Owner Profile**: [@radosavlevici210](https://github.com/radosavlevici210)
 - **Live Demo**: [VitalTones App](https://vitaltones.lovable.app)
-- **Lovable Project**: [Edit in Lovable](https://lovable.dev/projects/dfc1b38f-984c-4646-9d96-e79825279efa)
-- **Documentation**: [Lovable Docs](https://docs.lovable.dev)
+- **Development Platform**: [Edit in Lovable](https://lovable.dev/projects/dfc1b38f-984c-4646-9d96-e79825279efa)
 
-## 🙏 Acknowledgments
+## 🙏 Credits
 
-- Inspired by VitalTones medical research
-- Built with Lovable's AI-powered development platform
-- Based on cutting-edge neuroscience and frequency research
+- **Original Creator & Owner**: radosavlevici210
+- **Platform**: Built with Lovable's AI-powered development platform
+- **Research**: Based on cutting-edge neuroscience and frequency research
+- **Inspiration**: Advanced brainwave stimulation techniques
 
 ---
 
-**⚡ Experience the future of brainwave stimulation - 100% free, forever!**
+**⚡ VitalTones - Proprietary Brainwave Technology**  
+**© 2024 radosavlevici210 - All Rights Reserved**
 
-![Made with Lovable](https://img.shields.io/badge/Made%20with-Lovable-ff69b4?style=for-the-badge&logo=heart)
+![Proprietary](https://img.shields.io/badge/Proprietary-Software-red?style=for-the-badge&logo=lock)
+![Owner](https://img.shields.io/badge/Owner-radosavlevici210-blue?style=for-the-badge&logo=github)
