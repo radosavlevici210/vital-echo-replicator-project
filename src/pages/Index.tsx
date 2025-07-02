@@ -114,73 +114,117 @@ const Index = () => {
     };
   }, []);
 
-  // Tone frequency mappings for different types
+  // Advanced tone frequency mappings with scientifically-backed frequencies
   const getToneFrequencies = (toneName: string): { base: number; beat: number } => {
     const toneMap: { [key: string]: { base: number; beat: number } } = {
-      // Skills Enhancement - Beta waves (13-30 Hz)
-      "IQ Enhancement": { base: 440, beat: 20 },
-      "Focus Improvement": { base: 440, beat: 15 },
-      "Cognitive Enhancement": { base: 528, beat: 18 },
-      "Short-Term Memory": { base: 440, beat: 25 },
-      "Long-Term Memory": { base: 528, beat: 22 },
-      "Language Skills": { base: 396, beat: 16 },
-      "Sports Skills": { base: 440, beat: 28 },
-      "Musician Skills": { base: 528, beat: 24 },
-      "Vocal Skills": { base: 741, beat: 20 },
-      "Investor Skills": { base: 852, beat: 19 },
-      "Expert Skills": { base: 440, beat: 26 },
-      "Fluid Intelligence": { base: 528, beat: 17 },
+      // Advanced Skills Enhancement - Beta waves (13-30 Hz) + Solfeggio Frequencies
+      "Genius IQ Enhancement": { base: 741, beat: 40 }, // Advanced gamma + healing frequency
+      "Quantum Focus Mastery": { base: 528, beat: 15 }, // Love frequency + beta focus
+      "Neural Cognitive Boost": { base: 963, beat: 18 }, // Pineal activation + cognition
+      "Memory Palace Builder": { base: 396, beat: 25 }, // Liberation frequency + memory
+      "Photographic Memory": { base: 852, beat: 22 }, // Intuition frequency + memory
+      "Polyglot Language Master": { base: 639, beat: 16 }, // Connection frequency + language
+      "Olympic Athletic Performance": { base: 174, beat: 28 }, // Pain relief + performance
+      "Virtuoso Musical Genius": { base: 285, beat: 24 }, // Transformation + music
+      "Perfect Pitch Vocal": { base: 741, beat: 20 }, // Expression + vocal
+      "Wall Street Investor Mind": { base: 852, beat: 19 }, // Awakening + investor
+      "Master Expert Flow State": { base: 963, beat: 26 }, // Crown chakra + mastery
+      "Einstein Fluid Intelligence": { base: 528, beat: 17 }, // Love frequency + intelligence
 
-      // Emotional Intelligence - Alpha waves (8-13 Hz)
-      "Emotional Intelligence Boost": { base: 440, beat: 10 },
-      "Confidence Building": { base: 528, beat: 11 },
-      "Motivation Boosting": { base: 741, beat: 12 },
-      "Creative Thinking": { base: 852, beat: 9 },
-      "Alignment 144": { base: 144, beat: 8 },
+      // Advanced Emotional Intelligence - Alpha waves (8-13 Hz) + Sacred Frequencies
+      "Emotional Mastery Supreme": { base: 639, beat: 10 }, // Heart connection + alpha
+      "Unshakeable Confidence": { base: 741, beat: 11 }, // Expression + confidence
+      "Infinite Motivation Fire": { base: 528, beat: 12 }, // Love + motivation
+      "Divine Creative Genius": { base: 963, beat: 9 }, // Spiritual + creativity
+      "Sacred Geometry Alignment": { base: 432, beat: 8 }, // Natural frequency + alignment
 
-      // Spiritual Growth - Theta waves (4-8 Hz)
-      "Meditation Practices": { base: 528, beat: 6 },
-      "Chakra Balancing": { base: 396, beat: 7 },
-      "Crown Chakra": { base: 963, beat: 5 },
-      "Third Eye Chakra": { base: 852, beat: 6 },
-      "Astral Travel": { base: 741, beat: 4 },
-      "Pineal Gland Activation": { base: 936, beat: 5 },
-      "Love Meditation": { base: 528, beat: 7 },
-      "Self-Awareness": { base: 639, beat: 6 },
-      "Self-Esteem Boosting": { base: 741, beat: 8 },
-      "Lucid Dream Induction": { base: 285, beat: 4 },
-      "Sensory Enhancement": { base: 440, beat: 7 },
+      // Advanced Spiritual Growth - Theta waves (4-8 Hz) + Ancient Frequencies
+      "Deep Samadhi Meditation": { base: 528, beat: 6 }, // Love frequency + theta
+      "Complete Chakra Mastery": { base: 396, beat: 7 }, // Root healing + balance
+      "Crown Enlightenment": { base: 963, beat: 5 }, // Highest frequency + crown
+      "Third Eye Activation": { base: 852, beat: 6 }, // Intuition + third eye
+      "Astral Projection Mastery": { base: 741, beat: 4 }, // Expression + astral
+      "Pineal DMT Activation": { base: 936, beat: 5 }, // Pineal specific + activation
+      "Unconditional Love State": { base: 528, beat: 7 }, // Love frequency + theta
+      "Higher Self Connection": { base: 639, beat: 6 }, // Connection + awareness
+      "Infinite Self Worth": { base: 741, beat: 8 }, // Expression + self-esteem
+      "Lucid Dream Command": { base: 285, beat: 4 }, // Transformation + lucid
+      "Superhuman Senses": { base: 174, beat: 7 }, // Foundation + enhancement
 
-      // Sexual Health - Alpha/Theta waves
-      "Sexual Desire Stimulation": { base: 528, beat: 9 },
-      "Sexual Arousal": { base: 639, beat: 10 },
-      "Male Orgasm Amplification": { base: 741, beat: 8 },
-      "Female Orgasm Intensification": { base: 852, beat: 9 },
+      // Advanced Sexual Health - Alpha/Theta + Tantric Frequencies
+      "Tantric Desire Ignition": { base: 528, beat: 9 }, // Love + desire
+      "Sacred Sexual Arousal": { base: 639, beat: 10 }, // Connection + arousal
+      "Male Power Enhancement": { base: 741, beat: 8 }, // Expression + male energy
+      "Divine Feminine Orgasm": { base: 852, beat: 9 }, // Intuition + feminine
 
-      // General Well-being - Various therapeutic frequencies
-      "Homeostasis Enhancement": { base: 528, beat: 8 },
-      "Neurogenesis Stimulation": { base: 40, beat: 6 },
-      "Anti-Aging Therapy": { base: 528, beat: 7 },
-      "Serenity Boosting": { base: 396, beat: 5 },
-      "Bliss Induction": { base: 963, beat: 4 },
-      "Energize Therapy": { base: 741, beat: 15 },
-      "Alignment 108": { base: 108, beat: 8 },
-      "Immune Health Enhancement": { base: 528, beat: 10 },
-      "Body Repair Therapy": { base: 285, beat: 6 },
+      // Advanced General Well-being - Multi-layered Frequencies
+      "Cellular Regeneration": { base: 528, beat: 8 }, // DNA repair frequency
+      "Superhuman Neurogenesis": { base: 40, beat: 6 }, // Gamma + brain growth
+      "Immortality Anti-Aging": { base: 528, beat: 7 }, // Love frequency + longevity
+      "Zen Master Serenity": { base: 396, beat: 5 }, // Liberation + peace
+      "Ecstatic Bliss State": { base: 963, beat: 4 }, // Crown + bliss
+      "Unlimited Energy Matrix": { base: 741, beat: 15 }, // Expression + energy
+      "Sacred 108 Alignment": { base: 108, beat: 8 }, // Sacred number + balance
+      "Superhuman Immunity": { base: 528, beat: 10 }, // Love + immune system
+      "Miraculous Body Repair": { base: 285, beat: 6 }, // Transformation + healing
 
-      // Beauty & Care - Healing frequencies
-      "Hair Loss Prevention": { base: 528, beat: 8 },
-      "Eyelashes Restoration": { base: 741, beat: 7 },
-      "Eyelids Aging": { base: 528, beat: 6 },
-      "Eyebrows Growth": { base: 639, beat: 8 },
-      "Face Detox": { base: 396, beat: 7 },
-      "Forehead Radiance": { base: 852, beat: 6 },
-      "Ear Elegance": { base: 741, beat: 8 },
-      "Cheek Revitalize": { base: 528, beat: 7 },
-      "Nose Renew": { base: 639, beat: 6 },
-      "Philtrum Rejuvenate": { base: 741, beat: 7 },
-      "Jawline Harmony": { base: 852, beat: 8 },
-      "Neck Revive": { base: 528, beat: 6 }
+      // Advanced Beauty & Care - Aesthetic Frequencies + Golden Ratio
+      "Fountain of Youth Hair": { base: 528, beat: 8 }, // DNA repair + hair
+      "Divine Eyelash Growth": { base: 741, beat: 7 }, // Expression + lashes
+      "Timeless Eye Beauty": { base: 528, beat: 6 }, // Love + eye area
+      "Perfect Brow Architecture": { base: 639, beat: 8 }, // Harmony + brows
+      "Radiant Face Transformation": { base: 396, beat: 7 }, // Liberation + face
+      "Golden Ratio Forehead": { base: 852, beat: 6 }, // Intuition + proportion
+      "Symmetrical Ear Perfection": { base: 741, beat: 8 }, // Expression + ears
+      "Angelic Cheek Sculpting": { base: 528, beat: 7 }, // Love + cheeks
+      "Aristocratic Nose Refinement": { base: 639, beat: 6 }, // Harmony + nose
+      "Perfect Philtrum Definition": { base: 741, beat: 7 }, // Expression + philtrum
+      "Diamond Jawline Creation": { base: 852, beat: 8 }, // Awakening + jawline
+      "Swan Neck Elegance": { base: 528, beat: 6 }, // Grace + neck
+
+      // NEW ADVANCED CATEGORIES
+      
+      // Quantum Enhancement - Ultra-high frequencies
+      "Quantum Field Manipulation": { base: 1111, beat: 40 }, // Master number + gamma
+      "Reality Shifting Master": { base: 999, beat: 35 }, // Completion + shifting
+      "Manifestation Accelerator": { base: 888, beat: 30 }, // Abundance + manifestation
+      "Time Dilation Control": { base: 777, beat: 25 }, // Spiritual + time
+      "Dimensional Awareness": { base: 666, beat: 20 }, // Material mastery + dimension
+
+      // Psychic Powers - Extrasensory frequencies
+      "Telepathic Communication": { base: 852, beat: 14 }, // Intuition + telepathy
+      "Clairvoyant Vision": { base: 963, beat: 12 }, // Crown + vision
+      "Psychokinetic Power": { base: 741, beat: 18 }, // Expression + telekinesis
+      "Precognitive Ability": { base: 639, beat: 16 }, // Connection + foresight
+      "Remote Viewing Mastery": { base: 528, beat: 14 }, // Love + remote viewing
+
+      // Superhuman Abilities - Peak performance frequencies
+      "Superhuman Strength": { base: 174, beat: 30 }, // Foundation + strength
+      "Lightning Reflexes": { base: 285, beat: 35 }, // Transformation + speed
+      "Advanced Photographic Memory": { base: 396, beat: 25 }, // Liberation + memory
+      "Perfect Balance": { base: 417, beat: 20 }, // Change + balance
+      "Enhanced Endurance": { base: 528, beat: 28 }, // Love + endurance
+
+      // Business & Success - Prosperity frequencies
+      "Millionaire Mindset": { base: 888, beat: 20 }, // Abundance + success
+      "Leadership Magnetism": { base: 741, beat: 16 }, // Expression + leadership
+      "Negotiation Master": { base: 639, beat: 18 }, // Connection + persuasion
+      "Innovation Genius": { base: 963, beat: 22 }, // Crown + innovation
+      "Wealth Attraction": { base: 528, beat: 14 }, // Love + wealth
+
+      // Healing & Recovery - Therapeutic frequencies
+      "Pain Elimination": { base: 174, beat: 5 }, // Pain relief + theta
+      "Trauma Release": { base: 396, beat: 6 }, // Liberation + healing
+      "Addiction Recovery": { base: 417, beat: 7 }, // Change + recovery
+      "Depression Lift": { base: 528, beat: 8 }, // Love + mood
+      "Anxiety Dissolve": { base: 741, beat: 9 }, // Expression + calm
+      
+      // Sleep & Dreams - Restorative frequencies
+      "Instant Deep Sleep": { base: 285, beat: 2 }, // Transformation + delta
+      "Prophetic Dreams": { base: 639, beat: 4 }, // Connection + dreams
+      "Sleep Paralysis Freedom": { base: 396, beat: 3 }, // Liberation + freedom
+      "Nightmare Protection": { base: 741, beat: 2.5 }, // Expression + protection
+      "Regenerative Sleep": { base: 528, beat: 1.5 } // Love + deep rest
     };
 
     return toneMap[toneName] || { base: 440, beat: 10 };
@@ -189,51 +233,99 @@ const Index = () => {
   const toneCategories = [
     {
       id: "skills",
-      title: "Skills Enhancement",
-      description: "Boost your cognitive abilities and skills",
+      title: "Advanced Skills Enhancement",
+      description: "Next-generation cognitive enhancement and genius-level abilities",
       color: "linear-gradient(45deg, #3b82f6, #8b5cf6)",
       icon: "🧠",
-      tones: ["IQ Enhancement", "Focus Improvement", "Cognitive Enhancement", "Short-Term Memory", "Long-Term Memory", "Language Skills", "Sports Skills", "Musician Skills", "Vocal Skills", "Investor Skills", "Expert Skills", "Fluid Intelligence"]
+      tones: ["Genius IQ Enhancement", "Quantum Focus Mastery", "Neural Cognitive Boost", "Memory Palace Builder", "Photographic Memory", "Polyglot Language Master", "Olympic Athletic Performance", "Virtuoso Musical Genius", "Perfect Pitch Vocal", "Wall Street Investor Mind", "Master Expert Flow State", "Einstein Fluid Intelligence"]
     },
     {
       id: "emotional",
-      title: "Emotional Intelligence", 
-      description: "Develop emotional awareness and confidence",
+      title: "Emotional Mastery", 
+      description: "Supreme emotional intelligence and unshakeable confidence",
       color: "linear-gradient(45deg, #8b5cf6, #ec4899)",
       icon: "❤️",
-      tones: ["Emotional Intelligence Boost", "Confidence Building", "Motivation Boosting", "Creative Thinking", "Alignment 144"]
+      tones: ["Emotional Mastery Supreme", "Unshakeable Confidence", "Infinite Motivation Fire", "Divine Creative Genius", "Sacred Geometry Alignment"]
     },
     {
       id: "spiritual",
-      title: "Spiritual Growth",
-      description: "Deepen your spiritual practice and awareness", 
+      title: "Spiritual Awakening",
+      description: "Advanced spiritual practices and consciousness expansion", 
       color: "linear-gradient(45deg, #10b981, #06b6d4)",
       icon: "⭐",
-      tones: ["Meditation Practices", "Chakra Balancing", "Crown Chakra", "Third Eye Chakra", "Astral Travel", "Pineal Gland Activation", "Love Meditation", "Self-Awareness", "Self-Esteem Boosting", "Lucid Dream Induction", "Sensory Enhancement"]
+      tones: ["Deep Samadhi Meditation", "Complete Chakra Mastery", "Crown Enlightenment", "Third Eye Activation", "Astral Projection Mastery", "Pineal DMT Activation", "Unconditional Love State", "Higher Self Connection", "Infinite Self Worth", "Lucid Dream Command", "Superhuman Senses"]
     },
     {
       id: "sexual",
-      title: "Sexual Health",
-      description: "Enhance intimacy and sexual wellness",
+      title: "Sacred Sexual Energy",
+      description: "Tantric mastery and divine sexual expression",
       color: "linear-gradient(45deg, #ef4444, #f97316)",
       icon: "⚡",
-      tones: ["Sexual Desire Stimulation", "Sexual Arousal", "Male Orgasm Amplification", "Female Orgasm Intensification"]
+      tones: ["Tantric Desire Ignition", "Sacred Sexual Arousal", "Male Power Enhancement", "Divine Feminine Orgasm"]
     },
     {
       id: "wellbeing", 
-      title: "General Well-being",
-      description: "Optimize your health and vitality",
+      title: "Superhuman Well-being",
+      description: "Cellular regeneration and immortality protocols",
       color: "linear-gradient(45deg, #f59e0b, #eab308)",
       icon: "🌟",
-      tones: ["Homeostasis Enhancement", "Neurogenesis Stimulation", "Anti-Aging Therapy", "Serenity Boosting", "Bliss Induction", "Energize Therapy", "Alignment 108", "Immune Health Enhancement", "Body Repair Therapy"]
+      tones: ["Cellular Regeneration", "Superhuman Neurogenesis", "Immortality Anti-Aging", "Zen Master Serenity", "Ecstatic Bliss State", "Unlimited Energy Matrix", "Sacred 108 Alignment", "Superhuman Immunity", "Miraculous Body Repair"]
     },
     {
       id: "beauty",
-      title: "Beauty & Care", 
-      description: "Enhance your natural beauty and appearance",
+      title: "Divine Beauty & Perfection", 
+      description: "Golden ratio aesthetics and timeless beauty enhancement",
       color: "linear-gradient(45deg, #ec4899, #a855f7)",
       icon: "✨",
-      tones: ["Hair Loss Prevention", "Eyelashes Restoration", "Eyelids Aging", "Eyebrows Growth", "Face Detox", "Forehead Radiance", "Ear Elegance", "Cheek Revitalize", "Nose Renew", "Philtrum Rejuvenate", "Jawline Harmony", "Neck Revive"]
+      tones: ["Fountain of Youth Hair", "Divine Eyelash Growth", "Timeless Eye Beauty", "Perfect Brow Architecture", "Radiant Face Transformation", "Golden Ratio Forehead", "Symmetrical Ear Perfection", "Angelic Cheek Sculpting", "Aristocratic Nose Refinement", "Perfect Philtrum Definition", "Diamond Jawline Creation", "Swan Neck Elegance"]
+    },
+    {
+      id: "quantum",
+      title: "Quantum Enhancement",
+      description: "Reality manipulation and dimensional mastery",
+      color: "linear-gradient(45deg, #7c3aed, #2563eb)",
+      icon: "🌌",
+      tones: ["Quantum Field Manipulation", "Reality Shifting Master", "Manifestation Accelerator", "Time Dilation Control", "Dimensional Awareness"]
+    },
+    {
+      id: "psychic",
+      title: "Psychic Powers",
+      description: "Extrasensory abilities and supernatural consciousness",
+      color: "linear-gradient(45deg, #9333ea, #c026d3)",
+      icon: "🔮",
+      tones: ["Telepathic Communication", "Clairvoyant Vision", "Psychokinetic Power", "Precognitive Ability", "Remote Viewing Mastery"]
+    },
+    {
+      id: "superhuman",
+      title: "Superhuman Abilities",
+      description: "Peak human performance and beyond",
+      color: "linear-gradient(45deg, #dc2626, #ea580c)",
+      icon: "⚡",
+      tones: ["Superhuman Strength", "Lightning Reflexes", "Advanced Photographic Memory", "Perfect Balance", "Enhanced Endurance"]
+    },
+    {
+      id: "business",
+      title: "Business Mastery",
+      description: "Wealth creation and leadership magnetism",
+      color: "linear-gradient(45deg, #059669, #0891b2)",
+      icon: "💎",
+      tones: ["Millionaire Mindset", "Leadership Magnetism", "Negotiation Master", "Innovation Genius", "Wealth Attraction"]
+    },
+    {
+      id: "healing",
+      title: "Advanced Healing",
+      description: "Therapeutic recovery and trauma release",
+      color: "linear-gradient(45deg, #16a34a, #22c55e)",
+      icon: "🌿",
+      tones: ["Pain Elimination", "Trauma Release", "Addiction Recovery", "Depression Lift", "Anxiety Dissolve"]
+    },
+    {
+      id: "sleep",
+      title: "Sleep & Dreams",
+      description: "Advanced sleep optimization and dream control",
+      color: "linear-gradient(45deg, #4f46e5, #7c3aed)",
+      icon: "🌙",
+      tones: ["Instant Deep Sleep", "Prophetic Dreams", "Sleep Paralysis Freedom", "Nightmare Protection", "Regenerative Sleep"]
     }
   ];
 
@@ -765,6 +857,38 @@ const Index = () => {
                           <h3 style={{ fontSize: '16px', fontWeight: '600', margin: '0 0 8px 0', lineHeight: '1.3' }}>
                             {tone}
                           </h3>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '5px' }}>
+                            <span style={{
+                              background: 'linear-gradient(45deg, #10b981, #059669)',
+                              color: 'white',
+                              padding: '2px 8px',
+                              borderRadius: '10px',
+                              fontSize: '10px',
+                              fontWeight: '600'
+                            }}>
+                              ✓ CERTIFIED
+                            </span>
+                            <span style={{
+                              background: 'linear-gradient(45deg, #3b82f6, #1d4ed8)',
+                              color: 'white',
+                              padding: '2px 8px',
+                              borderRadius: '10px',
+                              fontSize: '10px',
+                              fontWeight: '600'
+                            }}>
+                              🔬 SCIENTIFIC
+                            </span>
+                            <span style={{
+                              background: 'linear-gradient(45deg, #f59e0b, #d97706)',
+                              color: 'white',
+                              padding: '2px 8px',
+                              borderRadius: '10px',
+                              fontSize: '10px',
+                              fontWeight: '600'
+                            }}>
+                              ⚡ PREMIUM
+                            </span>
+                          </div>
                           <p style={{ fontSize: '12px', color: '#9ca3af', margin: 0 }}>
                             {category.title}
                           </p>
