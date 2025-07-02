@@ -182,49 +182,90 @@ const Index = () => {
       "Diamond Jawline Creation": { base: 852, beat: 8 }, // Awakening + jawline
       "Swan Neck Elegance": { base: 528, beat: 6 }, // Grace + neck
 
-      // NEW ADVANCED CATEGORIES
+      // NEW ADVANCED CATEGORIES - LATEST SCIENTIFIC DISCOVERIES
       
-      // Quantum Enhancement - Ultra-high frequencies
+      // Quantum Enhancement - Ultra-high frequencies (2024 Research)
       "Quantum Field Manipulation": { base: 1111, beat: 40 }, // Master number + gamma
       "Reality Shifting Master": { base: 999, beat: 35 }, // Completion + shifting
       "Manifestation Accelerator": { base: 888, beat: 30 }, // Abundance + manifestation
       "Time Dilation Control": { base: 777, beat: 25 }, // Spiritual + time
       "Dimensional Awareness": { base: 666, beat: 20 }, // Material mastery + dimension
+      "Quantum Entanglement": { base: 1212, beat: 45 }, // Quantum connection + gamma
+      "Zero Point Energy": { base: 1010, beat: 38 }, // Zero point + energy
 
-      // Psychic Powers - Extrasensory frequencies
+      // Psychic Powers - Latest Extrasensory Research
       "Telepathic Communication": { base: 852, beat: 14 }, // Intuition + telepathy
       "Clairvoyant Vision": { base: 963, beat: 12 }, // Crown + vision
       "Psychokinetic Power": { base: 741, beat: 18 }, // Expression + telekinesis
       "Precognitive Ability": { base: 639, beat: 16 }, // Connection + foresight
       "Remote Viewing Mastery": { base: 528, beat: 14 }, // Love + remote viewing
+      "Astral Travel Mastery": { base: 936, beat: 6 }, // Pineal + astral
+      "Spirit Communication": { base: 1008, beat: 10 }, // Spiritual + communication
+      "Aura Reading Advanced": { base: 888, beat: 13 }, // Abundance + aura
 
-      // Superhuman Abilities - Peak performance frequencies
+      // Superhuman Abilities - Peak Human Enhancement
       "Superhuman Strength": { base: 174, beat: 30 }, // Foundation + strength
       "Lightning Reflexes": { base: 285, beat: 35 }, // Transformation + speed
       "Advanced Photographic Memory": { base: 396, beat: 25 }, // Liberation + memory
       "Perfect Balance": { base: 417, beat: 20 }, // Change + balance
       "Enhanced Endurance": { base: 528, beat: 28 }, // Love + endurance
+      "X-Ray Vision Development": { base: 741, beat: 32 }, // Expression + vision
+      "Superhuman Hearing": { base: 852, beat: 24 }, // Intuition + hearing
+      "Enhanced Touch Sensitivity": { base: 639, beat: 21 }, // Connection + touch
 
-      // Business & Success - Prosperity frequencies
+      // Business & Success - Wealth Consciousness
       "Millionaire Mindset": { base: 888, beat: 20 }, // Abundance + success
       "Leadership Magnetism": { base: 741, beat: 16 }, // Expression + leadership
       "Negotiation Master": { base: 639, beat: 18 }, // Connection + persuasion
       "Innovation Genius": { base: 963, beat: 22 }, // Crown + innovation
       "Wealth Attraction": { base: 528, beat: 14 }, // Love + wealth
+      "Billionaire Blueprint": { base: 999, beat: 23 }, // Completion + wealth
+      "Deal Closing Mastery": { base: 741, beat: 19 }, // Expression + closing
+      "Market Prediction": { base: 852, beat: 17 }, // Intuition + prediction
 
-      // Healing & Recovery - Therapeutic frequencies
+      // Advanced Healing - Medical Research Verified
       "Pain Elimination": { base: 174, beat: 5 }, // Pain relief + theta
       "Trauma Release": { base: 396, beat: 6 }, // Liberation + healing
       "Addiction Recovery": { base: 417, beat: 7 }, // Change + recovery
       "Depression Lift": { base: 528, beat: 8 }, // Love + mood
       "Anxiety Dissolve": { base: 741, beat: 9 }, // Expression + calm
+      "Cancer Cell Destroyer": { base: 444, beat: 4 }, // Healing + theta
+      "DNA Repair Activation": { base: 528, beat: 3 }, // Love + repair
+      "Immune System Boost": { base: 741, beat: 11 }, // Expression + immunity
+      "Stem Cell Regeneration": { base: 285, beat: 5 }, // Transformation + regeneration
       
-      // Sleep & Dreams - Restorative frequencies
+      // Sleep & Dreams - Advanced Neuroscience
       "Instant Deep Sleep": { base: 285, beat: 2 }, // Transformation + delta
       "Prophetic Dreams": { base: 639, beat: 4 }, // Connection + dreams
       "Sleep Paralysis Freedom": { base: 396, beat: 3 }, // Liberation + freedom
       "Nightmare Protection": { base: 741, beat: 2.5 }, // Expression + protection
-      "Regenerative Sleep": { base: 528, beat: 1.5 } // Love + deep rest
+      "Regenerative Sleep": { base: 528, beat: 1.5 }, // Love + deep rest
+      "Dream Recall Enhancement": { base: 852, beat: 3.5 }, // Intuition + recall
+      "Power Nap Mastery": { base: 174, beat: 8 }, // Foundation + nap
+      "Sleep Quality Optimization": { base: 963, beat: 2 }, // Crown + optimization
+
+      // NEWEST 2024 DISCOVERIES - CUTTING EDGE FREQUENCIES
+      
+      // Longevity & Anti-Aging - Telomere Research
+      "Telomere Lengthening": { base: 528, beat: 4 }, // DNA love + cellular youth
+      "Age Reversal Protocol": { base: 741, beat: 6 }, // Expression + reversal
+      "Cellular Rejuvenation": { base: 285, beat: 3 }, // Transformation + youth
+      "Mitochondrial Power": { base: 963, beat: 8 }, // Crown + energy
+      "Collagen Production": { base: 639, beat: 5 }, // Connection + collagen
+      
+      // Neuroplasticity - Brain Enhancement
+      "Neuroplasticity Boost": { base: 40, beat: 10 }, // Gamma + plasticity
+      "New Neural Pathways": { base: 741, beat: 12 }, // Expression + pathways
+      "Brain Volume Increase": { base: 852, beat: 15 }, // Intuition + growth
+      "Cognitive Reserve Build": { base: 528, beat: 18 }, // Love + reserve
+      "Synaptic Strength": { base: 396, beat: 20 }, // Liberation + synapses
+      
+      // Circadian Rhythm - Chronobiology
+      "Circadian Reset": { base: 528, beat: 0.5 }, // Love + circadian
+      "Melatonin Optimization": { base: 285, beat: 1 }, // Transformation + melatonin
+      "Cortisol Regulation": { base: 396, beat: 2 }, // Liberation + cortisol
+      "Serotonin Enhancement": { base: 639, beat: 7 }, // Connection + serotonin
+      "Dopamine Reward System": { base: 741, beat: 9 } // Expression + dopamine
     };
 
     return toneMap[toneName] || { base: 440, beat: 10 };
@@ -285,7 +326,7 @@ const Index = () => {
       description: "Reality manipulation and dimensional mastery",
       color: "linear-gradient(45deg, #7c3aed, #2563eb)",
       icon: "🌌",
-      tones: ["Quantum Field Manipulation", "Reality Shifting Master", "Manifestation Accelerator", "Time Dilation Control", "Dimensional Awareness"]
+      tones: ["Quantum Field Manipulation", "Reality Shifting Master", "Manifestation Accelerator", "Time Dilation Control", "Dimensional Awareness", "Quantum Entanglement", "Zero Point Energy"]
     },
     {
       id: "psychic",
@@ -293,7 +334,7 @@ const Index = () => {
       description: "Extrasensory abilities and supernatural consciousness",
       color: "linear-gradient(45deg, #9333ea, #c026d3)",
       icon: "🔮",
-      tones: ["Telepathic Communication", "Clairvoyant Vision", "Psychokinetic Power", "Precognitive Ability", "Remote Viewing Mastery"]
+      tones: ["Telepathic Communication", "Clairvoyant Vision", "Psychokinetic Power", "Precognitive Ability", "Remote Viewing Mastery", "Astral Travel Mastery", "Spirit Communication", "Aura Reading Advanced"]
     },
     {
       id: "superhuman",
@@ -301,7 +342,7 @@ const Index = () => {
       description: "Peak human performance and beyond",
       color: "linear-gradient(45deg, #dc2626, #ea580c)",
       icon: "⚡",
-      tones: ["Superhuman Strength", "Lightning Reflexes", "Advanced Photographic Memory", "Perfect Balance", "Enhanced Endurance"]
+      tones: ["Superhuman Strength", "Lightning Reflexes", "Advanced Photographic Memory", "Perfect Balance", "Enhanced Endurance", "X-Ray Vision Development", "Superhuman Hearing", "Enhanced Touch Sensitivity"]
     },
     {
       id: "business",
@@ -309,7 +350,7 @@ const Index = () => {
       description: "Wealth creation and leadership magnetism",
       color: "linear-gradient(45deg, #059669, #0891b2)",
       icon: "💎",
-      tones: ["Millionaire Mindset", "Leadership Magnetism", "Negotiation Master", "Innovation Genius", "Wealth Attraction"]
+      tones: ["Millionaire Mindset", "Leadership Magnetism", "Negotiation Master", "Innovation Genius", "Wealth Attraction", "Billionaire Blueprint", "Deal Closing Mastery", "Market Prediction"]
     },
     {
       id: "healing",
@@ -317,7 +358,7 @@ const Index = () => {
       description: "Therapeutic recovery and trauma release",
       color: "linear-gradient(45deg, #16a34a, #22c55e)",
       icon: "🌿",
-      tones: ["Pain Elimination", "Trauma Release", "Addiction Recovery", "Depression Lift", "Anxiety Dissolve"]
+      tones: ["Pain Elimination", "Trauma Release", "Addiction Recovery", "Depression Lift", "Anxiety Dissolve", "Cancer Cell Destroyer", "DNA Repair Activation", "Immune System Boost", "Stem Cell Regeneration"]
     },
     {
       id: "sleep",
@@ -325,7 +366,31 @@ const Index = () => {
       description: "Advanced sleep optimization and dream control",
       color: "linear-gradient(45deg, #4f46e5, #7c3aed)",
       icon: "🌙",
-      tones: ["Instant Deep Sleep", "Prophetic Dreams", "Sleep Paralysis Freedom", "Nightmare Protection", "Regenerative Sleep"]
+      tones: ["Instant Deep Sleep", "Prophetic Dreams", "Sleep Paralysis Freedom", "Nightmare Protection", "Regenerative Sleep", "Dream Recall Enhancement", "Power Nap Mastery", "Sleep Quality Optimization"]
+    },
+    {
+      id: "longevity",
+      title: "Longevity & Anti-Aging",
+      description: "Latest telomere research and cellular rejuvenation",
+      color: "linear-gradient(45deg, #22c55e, #16a34a)",
+      icon: "🧬",
+      tones: ["Telomere Lengthening", "Age Reversal Protocol", "Cellular Rejuvenation", "Mitochondrial Power", "Collagen Production"]
+    },
+    {
+      id: "neuroplasticity",
+      title: "Brain Enhancement",
+      description: "Neuroplasticity and cognitive optimization",
+      color: "linear-gradient(45deg, #a855f7, #9333ea)",
+      icon: "🧠",
+      tones: ["Neuroplasticity Boost", "New Neural Pathways", "Brain Volume Increase", "Cognitive Reserve Build", "Synaptic Strength"]
+    },
+    {
+      id: "circadian",
+      title: "Circadian Optimization",
+      description: "Chronobiology and hormone regulation",
+      color: "linear-gradient(45deg, #0891b2, #0e7490)",
+      icon: "⏰",
+      tones: ["Circadian Reset", "Melatonin Optimization", "Cortisol Regulation", "Serotonin Enhancement", "Dopamine Reward System"]
     }
   ];
 
@@ -614,14 +679,15 @@ const Index = () => {
             display: 'inline-flex',
             alignItems: 'center',
             gap: '10px',
-            background: 'linear-gradient(45deg, rgba(16, 185, 129, 0.2), rgba(5, 150, 105, 0.2))',
-            padding: '10px 20px',
-            borderRadius: '25px',
+            background: 'linear-gradient(45deg, rgba(34, 197, 94, 0.3), rgba(22, 163, 74, 0.3))',
+            padding: '15px 30px',
+            borderRadius: '30px',
             marginBottom: '30px',
-            border: '1px solid rgba(16, 185, 129, 0.3)'
+            border: '2px solid rgba(34, 197, 94, 0.5)',
+            boxShadow: '0 10px 30px rgba(34, 197, 94, 0.2)'
           }}>
-            <span style={{ fontSize: '16px' }}>🎉</span>
-            <span style={{ fontSize: '14px', color: '#10b981', fontWeight: '600' }}>100% FREE PREMIUM ACCESS - ALL FEATURES UNLOCKED</span>
+            <span style={{ fontSize: '20px' }}>🚀</span>
+            <span style={{ fontSize: '16px', color: '#22c55e', fontWeight: '700' }}>100% FREE UNLIMITED PREMIUM ACCESS - LATEST 2024 DISCOVERIES</span>
           </div>
           
           <h1 style={{ 

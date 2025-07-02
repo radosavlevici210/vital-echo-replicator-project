@@ -9,6 +9,48 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      ai_chat_sessions: {
+        Row: {
+          appraisal_id: string | null
+          created_at: string | null
+          id: string
+          session_data: Json | null
+          updated_at: string | null
+          user_id: string | null
+        }
+        Insert: {
+          appraisal_id?: string | null
+          created_at?: string | null
+          id?: string
+          session_data?: Json | null
+          updated_at?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          appraisal_id?: string | null
+          created_at?: string | null
+          id?: string
+          session_data?: Json | null
+          updated_at?: string | null
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "ai_chat_sessions_appraisal_id_fkey"
+            columns: ["appraisal_id"]
+            isOneToOne: false
+            referencedRelation: "appraisals"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "ai_chat_sessions_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       ai_conversations: {
         Row: {
           command_type: string | null
@@ -45,6 +87,134 @@ export type Database = {
         }
         Relationships: []
       }
+      appraisals: {
+        Row: {
+          ai_analysis: Json | null
+          ai_estimated_value: number | null
+          brand: string | null
+          category: string
+          condition_assessment: string | null
+          confidence_score: number | null
+          created_at: string | null
+          description: string
+          expert_notes: string | null
+          final_valuation: number | null
+          id: string
+          image_urls: string[] | null
+          market_analysis: Json | null
+          market_range_max: number | null
+          market_range_min: number | null
+          model: string | null
+          subcategory: string | null
+          title: string
+          updated_at: string | null
+          user_id: string | null
+          validation_status: string | null
+        }
+        Insert: {
+          ai_analysis?: Json | null
+          ai_estimated_value?: number | null
+          brand?: string | null
+          category: string
+          condition_assessment?: string | null
+          confidence_score?: number | null
+          created_at?: string | null
+          description: string
+          expert_notes?: string | null
+          final_valuation?: number | null
+          id?: string
+          image_urls?: string[] | null
+          market_analysis?: Json | null
+          market_range_max?: number | null
+          market_range_min?: number | null
+          model?: string | null
+          subcategory?: string | null
+          title: string
+          updated_at?: string | null
+          user_id?: string | null
+          validation_status?: string | null
+        }
+        Update: {
+          ai_analysis?: Json | null
+          ai_estimated_value?: number | null
+          brand?: string | null
+          category?: string
+          condition_assessment?: string | null
+          confidence_score?: number | null
+          created_at?: string | null
+          description?: string
+          expert_notes?: string | null
+          final_valuation?: number | null
+          id?: string
+          image_urls?: string[] | null
+          market_analysis?: Json | null
+          market_range_max?: number | null
+          market_range_min?: number | null
+          model?: string | null
+          subcategory?: string | null
+          title?: string
+          updated_at?: string | null
+          user_id?: string | null
+          validation_status?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "appraisals_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      audit_trail: {
+        Row: {
+          action_type: string
+          appraisal_id: string | null
+          id: string
+          new_value: Json | null
+          old_value: Json | null
+          reason: string | null
+          timestamp: string | null
+          user_id: string | null
+        }
+        Insert: {
+          action_type: string
+          appraisal_id?: string | null
+          id?: string
+          new_value?: Json | null
+          old_value?: Json | null
+          reason?: string | null
+          timestamp?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          action_type?: string
+          appraisal_id?: string | null
+          id?: string
+          new_value?: Json | null
+          old_value?: Json | null
+          reason?: string | null
+          timestamp?: string | null
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "audit_trail_appraisal_id_fkey"
+            columns: ["appraisal_id"]
+            isOneToOne: false
+            referencedRelation: "appraisals"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "audit_trail_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       browser_sessions: {
         Row: {
           active_tab_index: number | null
@@ -72,6 +242,81 @@ export type Database = {
           tabs?: Json | null
           updated_at?: string
           user_id?: string
+        }
+        Relationships: []
+      }
+      market_data: {
+        Row: {
+          brand: string | null
+          category: string
+          condition_grade: string | null
+          created_at: string | null
+          data_source: string | null
+          demand_score: number | null
+          id: string
+          last_updated: string | null
+          market_price_max: number | null
+          market_price_min: number | null
+          model: string | null
+          subcategory: string | null
+        }
+        Insert: {
+          brand?: string | null
+          category: string
+          condition_grade?: string | null
+          created_at?: string | null
+          data_source?: string | null
+          demand_score?: number | null
+          id?: string
+          last_updated?: string | null
+          market_price_max?: number | null
+          market_price_min?: number | null
+          model?: string | null
+          subcategory?: string | null
+        }
+        Update: {
+          brand?: string | null
+          category?: string
+          condition_grade?: string | null
+          created_at?: string | null
+          data_source?: string | null
+          demand_score?: number | null
+          id?: string
+          last_updated?: string | null
+          market_price_max?: number | null
+          market_price_min?: number | null
+          model?: string | null
+          subcategory?: string | null
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string | null
+          email: string | null
+          full_name: string | null
+          id: string
+          role: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string | null
+          email?: string | null
+          full_name?: string | null
+          id: string
+          role?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string | null
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          role?: string | null
+          updated_at?: string | null
         }
         Relationships: []
       }
@@ -155,6 +400,44 @@ export type Database = {
           user_id?: string
         }
         Relationships: []
+      }
+      validation_layers: {
+        Row: {
+          appraisal_id: string | null
+          confidence_score: number | null
+          created_at: string | null
+          id: string
+          layer_type: string
+          status: string | null
+          validation_result: Json | null
+        }
+        Insert: {
+          appraisal_id?: string | null
+          confidence_score?: number | null
+          created_at?: string | null
+          id?: string
+          layer_type: string
+          status?: string | null
+          validation_result?: Json | null
+        }
+        Update: {
+          appraisal_id?: string | null
+          confidence_score?: number | null
+          created_at?: string | null
+          id?: string
+          layer_type?: string
+          status?: string | null
+          validation_result?: Json | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "validation_layers_appraisal_id_fkey"
+            columns: ["appraisal_id"]
+            isOneToOne: false
+            referencedRelation: "appraisals"
+            referencedColumns: ["id"]
+          },
+        ]
       }
     }
     Views: {
