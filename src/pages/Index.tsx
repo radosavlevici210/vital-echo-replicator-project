@@ -9,36 +9,52 @@ const Index = () => {
 
   const toneCategories = [
     {
-      id: "focus",
-      title: "Focus & Concentration",
-      description: "Enhance your mental clarity and productivity",
+      id: "skills",
+      title: "Skills Enhancement",
+      description: "Boost your cognitive abilities and skills",
       color: "from-blue-500 to-purple-600",
       icon: Brain,
-      tones: ["Alpha Waves", "Beta Boost", "Deep Focus", "Study Flow"]
+      tones: ["IQ Enhancement", "Focus Improvement", "Cognitive Enhancement", "Short-Term Memory", "Long-Term Memory", "Language Skills", "Sports Skills", "Musician Skills", "Vocal Skills", "Investor Skills", "Expert Skills", "Fluid Intelligence"]
     },
     {
-      id: "relaxation",
-      title: "Relaxation & Sleep",
-      description: "Unwind and prepare for restful sleep",
+      id: "emotional",
+      title: "Emotional Intelligence",
+      description: "Develop emotional awareness and confidence",
       color: "from-purple-500 to-pink-500",
       icon: Heart,
-      tones: ["Delta Dreams", "Theta Calm", "Sleep Induction", "Deep Rest"]
+      tones: ["Emotional Intelligence Boost", "Confidence Building", "Motivation Boosting", "Creative Thinking", "Alignment 144"]
     },
     {
-      id: "energy",
-      title: "Energy & Motivation",
-      description: "Boost your energy and drive",
-      color: "from-orange-500 to-red-500",
-      icon: Zap,
-      tones: ["Morning Boost", "Power Up", "Energize", "Vitality"]
-    },
-    {
-      id: "meditation",
-      title: "Meditation & Mindfulness",
-      description: "Deepen your practice and awareness",
+      id: "spiritual",
+      title: "Spiritual Growth",
+      description: "Deepen your spiritual practice and awareness",
       color: "from-green-500 to-teal-500",
       icon: Star,
-      tones: ["Om Frequency", "Zen Garden", "Mindful Breath", "Inner Peace"]
+      tones: ["Meditation Practices", "Chakra Balancing", "Crown Chakra", "Third Eye Chakra", "Astral Travel", "Pineal Gland Activation", "Love Meditation", "Self-Awareness", "Self-Esteem Boosting", "Lucid Dream Induction", "Sensory Enhancement"]
+    },
+    {
+      id: "sexual",
+      title: "Sexual Health",
+      description: "Enhance intimacy and sexual wellness",
+      color: "from-red-500 to-orange-500",
+      icon: Zap,
+      tones: ["Sexual Desire Stimulation", "Sexual Arousal", "Male Orgasm Amplification", "Female Orgasm Intensification"]
+    },
+    {
+      id: "wellbeing",
+      title: "General Well-being",
+      description: "Optimize your health and vitality",
+      color: "from-orange-500 to-yellow-500",
+      icon: Heart,
+      tones: ["Homeostasis Enhancement", "Neurogenesis Stimulation", "Anti-Aging Therapy", "Serenity Boosting", "Bliss Induction", "Energize Therapy", "Alignment 108", "Immune Health Enhancement", "Body Repair Therapy"]
+    },
+    {
+      id: "beauty",
+      title: "Beauty & Care",
+      description: "Enhance your natural beauty and appearance",
+      color: "from-pink-500 to-purple-500",
+      icon: Star,
+      tones: ["Hair Loss Prevention", "Eyelashes Restoration", "Eyelids Aging", "Eyebrows Growth", "Face Detox", "Forehead Radiance", "Ear Elegance", "Cheek Revitalize", "Nose Renew", "Philtrum Rejuvenate", "Jawline Harmony", "Neck Revive"]
     }
   ];
 
