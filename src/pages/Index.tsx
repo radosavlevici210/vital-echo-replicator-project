@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { checkDomainAccess, getAccessStatus } from "../lib/domainAccess";
 
 // Audio Generator for Binaural Beats
 class BinauralBeatGenerator {
@@ -105,6 +106,9 @@ const Index = () => {
   const [isMinimized, setIsMinimized] = useState(false);
   const [playerPosition, setPlayerPosition] = useState({ x: 20, y: 20 });
   const audioGeneratorRef = useRef<BinauralBeatGenerator | null>(null);
+  
+  // Check domain access
+  const accessStatus = getAccessStatus();
 
   // Initialize audio generator
   useEffect(() => {
@@ -395,6 +399,12 @@ const Index = () => {
   ];
 
   const togglePlay = (toneId: string) => {
+    // Check access permissions
+    if (!accessStatus.canPlay) {
+      alert('Premium access required. Please access from spacecloud.tel domain for free premium access.');
+      return;
+    }
+    
     if (currentlyPlaying === toneId) {
       // Stop current tone
       audioGeneratorRef.current?.stopTone();
@@ -667,7 +677,7 @@ const Index = () => {
             cursor: 'pointer',
             fontWeight: '500'
           }}>
-            Start Free - All Premium Features
+            {accessStatus.canPlay ? 'All Premium Features FREE' : 'Premium Access Required'}
           </button>
         </div>
       </header>
@@ -687,7 +697,9 @@ const Index = () => {
             boxShadow: '0 10px 30px rgba(34, 197, 94, 0.2)'
           }}>
             <span style={{ fontSize: '20px' }}>🚀</span>
-            <span style={{ fontSize: '16px', color: '#22c55e', fontWeight: '700' }}>100% FREE UNLIMITED PREMIUM ACCESS - LATEST 2024 DISCOVERIES</span>
+            <span style={{ fontSize: '16px', color: '#22c55e', fontWeight: '700' }}>
+              {accessStatus.canPlay ? '100% FREE UNLIMITED PREMIUM ACCESS - LATEST 2024 DISCOVERIES' : 'PREMIUM ACCESS REQUIRED - Visit spacecloud.tel for FREE access'}
+            </span>
           </div>
           
           <h1 style={{ 
@@ -726,7 +738,7 @@ const Index = () => {
               fontWeight: '600',
               boxShadow: '0 10px 30px rgba(139, 92, 246, 0.3)'
             }}>
-              Access All Premium Tones FREE
+              {accessStatus.canPlay ? 'Access All Premium Tones FREE' : 'Get Premium Access at spacecloud.tel'}
             </button>
             <button style={{
               background: 'transparent',
@@ -1001,9 +1013,11 @@ const Index = () => {
                           onClick={() => togglePlay(toneId)}
                           style={{
                             width: '100%',
-                            background: isPlaying 
-                              ? 'rgba(255, 255, 255, 0.1)' 
-                              : 'linear-gradient(45deg, #8b5cf6, #ec4899)',
+            background: isPlaying 
+              ? 'rgba(255, 255, 255, 0.1)' 
+              : accessStatus.canPlay 
+                ? 'linear-gradient(45deg, #8b5cf6, #ec4899)'
+                : 'linear-gradient(45deg, #6b7280, #4b5563)',
                             color: 'white',
                             border: 'none',
                             padding: '12px',
@@ -1020,13 +1034,15 @@ const Index = () => {
                           <span style={{ fontSize: '16px' }}>
                             {isPlaying ? '⏸️' : '▶️'}
                           </span>
-                          {isPlaying ? 'Playing Premium...' : 'Play Premium FREE'}
+                          {isPlaying ? 'Playing Premium...' : accessStatus.canPlay ? 'Play Premium FREE' : 'Premium Required'}
                         </button>
 
-                        {/* Free Premium Access Badge */}
+                        {/* Access Status Badge */}
                         <div style={{
                           width: '100%',
-                          background: 'linear-gradient(45deg, #10b981, #059669)',
+                          background: accessStatus.canPlay 
+                            ? 'linear-gradient(45deg, #10b981, #059669)'
+                            : 'linear-gradient(45deg, #ef4444, #dc2626)',
                           color: 'white',
                           border: 'none',
                           padding: '8px',
@@ -1039,8 +1055,8 @@ const Index = () => {
                           gap: '5px',
                           marginTop: '8px'
                         }}>
-                          <span style={{ fontSize: '14px' }}>🎉</span>
-                          UNLOCKED - FREE PREMIUM ACCESS
+                          <span style={{ fontSize: '14px' }}>{accessStatus.canPlay ? '🎉' : '🔒'}</span>
+                          {accessStatus.badge}
                         </div>
 
                       </div>
@@ -1124,7 +1140,7 @@ const Index = () => {
               boxShadow: '0 10px 30px rgba(139, 92, 246, 0.3)',
               animation: 'pulse 2s infinite'
             }}>
-              All Features FREE Forever
+              {accessStatus.canPlay ? 'All Features FREE Forever' : 'Visit spacecloud.tel for FREE Access'}
             </button>
             <button style={{
               background: 'transparent',
