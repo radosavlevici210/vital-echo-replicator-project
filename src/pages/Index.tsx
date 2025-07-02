@@ -510,7 +510,7 @@ const Index = () => {
             cursor: 'pointer',
             fontWeight: '500'
           }}>
-            Get Started
+            Start Free - All Premium Features
           </button>
         </div>
       </header>
@@ -568,7 +568,7 @@ const Index = () => {
               fontWeight: '600',
               boxShadow: '0 10px 30px rgba(139, 92, 246, 0.3)'
             }}>
-              Start Your Journey
+              Access All Premium Tones FREE
             </button>
             <button style={{
               background: 'transparent',
@@ -914,7 +914,7 @@ const Index = () => {
               boxShadow: '0 10px 30px rgba(139, 92, 246, 0.3)',
               animation: 'pulse 2s infinite'
             }}>
-              Start Free Trial
+              All Features FREE Forever
             </button>
             <button style={{
               background: 'transparent',
@@ -926,7 +926,7 @@ const Index = () => {
               cursor: 'pointer',
               fontWeight: '600'
             }}>
-              View Pricing
+              Explore Premium Library
             </button>
           </div>
         </div>
