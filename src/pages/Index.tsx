@@ -1,5 +1,99 @@
 import { useState, useRef, useEffect } from "react";
 
+// Audio Generator for Binaural Beats
+class BinauralBeatGenerator {
+  private audioContext: AudioContext | null = null;
+  private leftOscillator: OscillatorNode | null = null;
+  private rightOscillator: OscillatorNode | null = null;
+  private gainNode: GainNode | null = null;
+  private isPlaying = false;
+
+  constructor() {
+    this.initAudio();
+  }
+
+  private initAudio() {
+    try {
+      this.audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+    } catch (error) {
+      console.error('Web Audio API not supported:', error);
+    }
+  }
+
+  async startTone(baseFreq: number = 440, beatFreq: number = 10) {
+    if (!this.audioContext) return;
+
+    if (this.audioContext.state === 'suspended') {
+      await this.audioContext.resume();
+    }
+
+    this.stopTone();
+
+    // Create oscillators for left and right channels
+    this.leftOscillator = this.audioContext.createOscillator();
+    this.rightOscillator = this.audioContext.createOscillator();
+    this.gainNode = this.audioContext.createGain();
+
+    // Create stereo panner for left/right separation
+    const pannerLeft = this.audioContext.createStereoPanner();
+    const pannerRight = this.audioContext.createStereoPanner();
+    
+    pannerLeft.pan.value = -1; // Full left
+    pannerRight.pan.value = 1; // Full right
+
+    // Set frequencies (binaural beat = difference between left and right)
+    this.leftOscillator.frequency.setValueAtTime(baseFreq, this.audioContext.currentTime);
+    this.rightOscillator.frequency.setValueAtTime(baseFreq + beatFreq, this.audioContext.currentTime);
+
+    // Set waveform to sine wave for pure tones
+    this.leftOscillator.type = 'sine';
+    this.rightOscillator.type = 'sine';
+
+    // Set volume (start low for safety)
+    this.gainNode.gain.setValueAtTime(0.1, this.audioContext.currentTime);
+
+    // Connect audio graph
+    this.leftOscillator.connect(pannerLeft).connect(this.gainNode);
+    this.rightOscillator.connect(pannerRight).connect(this.gainNode);
+    this.gainNode.connect(this.audioContext.destination);
+
+    // Start oscillators
+    this.leftOscillator.start();
+    this.rightOscillator.start();
+    
+    this.isPlaying = true;
+  }
+
+  stopTone() {
+    if (this.leftOscillator) {
+      this.leftOscillator.stop();
+      this.leftOscillator.disconnect();
+      this.leftOscillator = null;
+    }
+    if (this.rightOscillator) {
+      this.rightOscillator.stop();
+      this.rightOscillator.disconnect();
+      this.rightOscillator = null;
+    }
+    if (this.gainNode) {
+      this.gainNode.disconnect();
+      this.gainNode = null;
+    }
+    this.isPlaying = false;
+  }
+
+  setVolume(volume: number) {
+    if (this.gainNode) {
+      // Volume from 0-100 to 0-0.3 (safe range)
+      this.gainNode.gain.setValueAtTime(volume / 100 * 0.3, this.audioContext!.currentTime);
+    }
+  }
+
+  getIsPlaying() {
+    return this.isPlaying;
+  }
+}
+
 const Index = () => {
   const [currentlyPlaying, setCurrentlyPlaying] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
@@ -10,6 +104,87 @@ const Index = () => {
   const [progress, setProgress] = useState(0);
   const [isMinimized, setIsMinimized] = useState(false);
   const [playerPosition, setPlayerPosition] = useState({ x: 20, y: 20 });
+  const audioGeneratorRef = useRef<BinauralBeatGenerator | null>(null);
+
+  // Initialize audio generator
+  useEffect(() => {
+    audioGeneratorRef.current = new BinauralBeatGenerator();
+    return () => {
+      audioGeneratorRef.current?.stopTone();
+    };
+  }, []);
+
+  // Tone frequency mappings for different types
+  const getToneFrequencies = (toneName: string): { base: number; beat: number } => {
+    const toneMap: { [key: string]: { base: number; beat: number } } = {
+      // Skills Enhancement - Beta waves (13-30 Hz)
+      "IQ Enhancement": { base: 440, beat: 20 },
+      "Focus Improvement": { base: 440, beat: 15 },
+      "Cognitive Enhancement": { base: 528, beat: 18 },
+      "Short-Term Memory": { base: 440, beat: 25 },
+      "Long-Term Memory": { base: 528, beat: 22 },
+      "Language Skills": { base: 396, beat: 16 },
+      "Sports Skills": { base: 440, beat: 28 },
+      "Musician Skills": { base: 528, beat: 24 },
+      "Vocal Skills": { base: 741, beat: 20 },
+      "Investor Skills": { base: 852, beat: 19 },
+      "Expert Skills": { base: 440, beat: 26 },
+      "Fluid Intelligence": { base: 528, beat: 17 },
+
+      // Emotional Intelligence - Alpha waves (8-13 Hz)
+      "Emotional Intelligence Boost": { base: 440, beat: 10 },
+      "Confidence Building": { base: 528, beat: 11 },
+      "Motivation Boosting": { base: 741, beat: 12 },
+      "Creative Thinking": { base: 852, beat: 9 },
+      "Alignment 144": { base: 144, beat: 8 },
+
+      // Spiritual Growth - Theta waves (4-8 Hz)
+      "Meditation Practices": { base: 528, beat: 6 },
+      "Chakra Balancing": { base: 396, beat: 7 },
+      "Crown Chakra": { base: 963, beat: 5 },
+      "Third Eye Chakra": { base: 852, beat: 6 },
+      "Astral Travel": { base: 741, beat: 4 },
+      "Pineal Gland Activation": { base: 936, beat: 5 },
+      "Love Meditation": { base: 528, beat: 7 },
+      "Self-Awareness": { base: 639, beat: 6 },
+      "Self-Esteem Boosting": { base: 741, beat: 8 },
+      "Lucid Dream Induction": { base: 285, beat: 4 },
+      "Sensory Enhancement": { base: 440, beat: 7 },
+
+      // Sexual Health - Alpha/Theta waves
+      "Sexual Desire Stimulation": { base: 528, beat: 9 },
+      "Sexual Arousal": { base: 639, beat: 10 },
+      "Male Orgasm Amplification": { base: 741, beat: 8 },
+      "Female Orgasm Intensification": { base: 852, beat: 9 },
+
+      // General Well-being - Various therapeutic frequencies
+      "Homeostasis Enhancement": { base: 528, beat: 8 },
+      "Neurogenesis Stimulation": { base: 40, beat: 6 },
+      "Anti-Aging Therapy": { base: 528, beat: 7 },
+      "Serenity Boosting": { base: 396, beat: 5 },
+      "Bliss Induction": { base: 963, beat: 4 },
+      "Energize Therapy": { base: 741, beat: 15 },
+      "Alignment 108": { base: 108, beat: 8 },
+      "Immune Health Enhancement": { base: 528, beat: 10 },
+      "Body Repair Therapy": { base: 285, beat: 6 },
+
+      // Beauty & Care - Healing frequencies
+      "Hair Loss Prevention": { base: 528, beat: 8 },
+      "Eyelashes Restoration": { base: 741, beat: 7 },
+      "Eyelids Aging": { base: 528, beat: 6 },
+      "Eyebrows Growth": { base: 639, beat: 8 },
+      "Face Detox": { base: 396, beat: 7 },
+      "Forehead Radiance": { base: 852, beat: 6 },
+      "Ear Elegance": { base: 741, beat: 8 },
+      "Cheek Revitalize": { base: 528, beat: 7 },
+      "Nose Renew": { base: 639, beat: 6 },
+      "Philtrum Rejuvenate": { base: 741, beat: 7 },
+      "Jawline Harmony": { base: 852, beat: 8 },
+      "Neck Revive": { base: 528, beat: 6 }
+    };
+
+    return toneMap[toneName] || { base: 440, beat: 10 };
+  };
 
   const toneCategories = [
     {
@@ -64,21 +239,48 @@ const Index = () => {
 
   const togglePlay = (toneId: string) => {
     if (currentlyPlaying === toneId) {
+      // Stop current tone
+      audioGeneratorRef.current?.stopTone();
       setCurrentlyPlaying(null);
       setShowFloatingPlayer(false);
     } else {
-      setCurrentlyPlaying(toneId);
+      // Stop any current tone
+      audioGeneratorRef.current?.stopTone();
       
-      // Find tone name
+      // Find tone name and start new tone
       const [categoryId, index] = toneId.split('-');
       const category = toneCategories.find(cat => cat.id === categoryId);
       const toneIdx = parseInt(index);
-      if (category && category.tones[toneIdx]) {
-        setCurrentToneName(category.tones[toneIdx]);
-      }
       
-      setShowFloatingPlayer(true);
+      if (category && category.tones[toneIdx]) {
+        const toneName = category.tones[toneIdx];
+        setCurrentToneName(toneName);
+        
+        // Get frequencies for this tone and start playing
+        const frequencies = getToneFrequencies(toneName);
+        audioGeneratorRef.current?.startTone(frequencies.base, frequencies.beat);
+        
+        setCurrentlyPlaying(toneId);
+        setShowFloatingPlayer(true);
+        
+        // Auto-update progress (demo)
+        const progressInterval = setInterval(() => {
+          setProgress(prev => {
+            if (prev >= 100) {
+              clearInterval(progressInterval);
+              return 0;
+            }
+            return prev + 0.5; // Slow progress for demo
+          });
+        }, 300);
+      }
     }
+  };
+
+  // Handle volume change
+  const handleVolumeChange = (newVolume: number) => {
+    setVolume(newVolume);
+    audioGeneratorRef.current?.setVolume(newVolume);
   };
 
   const filteredCategories = toneCategories.filter(category => {
@@ -212,7 +414,14 @@ const Index = () => {
             {/* Volume */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '15px' }}>
               <span style={{ fontSize: '14px' }}>🔊</span>
-              <div style={{ flex: 1, height: '4px', background: 'rgba(255, 255, 255, 0.2)', borderRadius: '2px' }}>
+              <div 
+                style={{ flex: 1, height: '4px', background: 'rgba(255, 255, 255, 0.2)', borderRadius: '2px', cursor: 'pointer' }}
+                onClick={(e) => {
+                  const rect = e.currentTarget.getBoundingClientRect();
+                  const newVolume = ((e.clientX - rect.left) / rect.width) * 100;
+                  handleVolumeChange(Math.max(0, Math.min(100, newVolume)));
+                }}
+              >
                 <div style={{ 
                   width: `${volume}%`, 
                   height: '100%', 
@@ -220,6 +429,7 @@ const Index = () => {
                   borderRadius: '2px' 
                 }}></div>
               </div>
+              <span style={{ fontSize: '12px', color: '#9ca3af', minWidth: '30px' }}>{Math.round(volume)}%</span>
             </div>
           </>
         )}
@@ -621,6 +831,33 @@ const Index = () => {
                             {isPlaying ? '⏸️' : '▶️'}
                           </span>
                           {isPlaying ? 'Playing...' : 'Play Tone'}
+                        </button>
+
+                        {/* Add Buy Button */}
+                        <button
+                          onClick={() => {
+                            // TODO: Implement purchase functionality
+                            alert(`Purchase ${tone} - Feature coming soon after payment setup!`);
+                          }}
+                          style={{
+                            width: '100%',
+                            background: 'linear-gradient(45deg, #059669, #0d9488)',
+                            color: 'white',
+                            border: 'none',
+                            padding: '12px',
+                            borderRadius: '10px',
+                            cursor: 'pointer',
+                            fontSize: '14px',
+                            fontWeight: '500',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            gap: '8px',
+                            marginTop: '8px'
+                          }}
+                        >
+                          <span style={{ fontSize: '16px' }}>💳</span>
+                          Buy Tone - $4.99
                         </button>
                       </div>
                     );
