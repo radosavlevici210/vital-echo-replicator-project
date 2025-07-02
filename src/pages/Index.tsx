@@ -614,14 +614,14 @@ const Index = () => {
             display: 'inline-flex',
             alignItems: 'center',
             gap: '10px',
-            background: 'rgba(139, 92, 246, 0.2)',
+            background: 'linear-gradient(45deg, rgba(16, 185, 129, 0.2), rgba(5, 150, 105, 0.2))',
             padding: '10px 20px',
             borderRadius: '25px',
             marginBottom: '30px',
-            border: '1px solid rgba(139, 92, 246, 0.3)'
+            border: '1px solid rgba(16, 185, 129, 0.3)'
           }}>
-            <span style={{ fontSize: '16px' }}>⭐</span>
-            <span style={{ fontSize: '14px', color: '#d1d5db' }}>Transform Your Mind with Sound</span>
+            <span style={{ fontSize: '16px' }}>🎉</span>
+            <span style={{ fontSize: '14px', color: '#10b981', fontWeight: '600' }}>100% FREE PREMIUM ACCESS - ALL FEATURES UNLOCKED</span>
           </div>
           
           <h1 style={{ 
@@ -954,8 +954,28 @@ const Index = () => {
                           <span style={{ fontSize: '16px' }}>
                             {isPlaying ? '⏸️' : '▶️'}
                           </span>
-                          {isPlaying ? 'Playing...' : 'Play Tone'}
+                          {isPlaying ? 'Playing Premium...' : 'Play Premium FREE'}
                         </button>
+
+                        {/* Free Premium Access Badge */}
+                        <div style={{
+                          width: '100%',
+                          background: 'linear-gradient(45deg, #10b981, #059669)',
+                          color: 'white',
+                          border: 'none',
+                          padding: '8px',
+                          borderRadius: '10px',
+                          fontSize: '12px',
+                          fontWeight: '600',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          gap: '5px',
+                          marginTop: '8px'
+                        }}>
+                          <span style={{ fontSize: '14px' }}>🎉</span>
+                          UNLOCKED - FREE PREMIUM ACCESS
+                        </div>
 
                       </div>
                     );
