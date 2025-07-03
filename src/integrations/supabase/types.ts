@@ -87,6 +87,44 @@ export type Database = {
         }
         Relationships: []
       }
+      appraisal_images: {
+        Row: {
+          appraisal_id: string
+          created_at: string | null
+          description: string | null
+          id: string
+          image_type: string | null
+          image_url: string
+          order_index: number | null
+        }
+        Insert: {
+          appraisal_id: string
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          image_type?: string | null
+          image_url: string
+          order_index?: number | null
+        }
+        Update: {
+          appraisal_id?: string
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          image_type?: string | null
+          image_url?: string
+          order_index?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "appraisal_images_appraisal_id_fkey"
+            columns: ["appraisal_id"]
+            isOneToOne: false
+            referencedRelation: "appraisals"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       appraisals: {
         Row: {
           ai_analysis: Json | null
@@ -245,6 +283,50 @@ export type Database = {
         }
         Relationships: []
       }
+      expert_reviews: {
+        Row: {
+          appraisal_id: string
+          confidence_score: number | null
+          created_at: string | null
+          expert_id: string
+          expert_notes: string | null
+          expert_valuation: number | null
+          id: string
+          review_status: string | null
+          reviewed_at: string | null
+        }
+        Insert: {
+          appraisal_id: string
+          confidence_score?: number | null
+          created_at?: string | null
+          expert_id: string
+          expert_notes?: string | null
+          expert_valuation?: number | null
+          id?: string
+          review_status?: string | null
+          reviewed_at?: string | null
+        }
+        Update: {
+          appraisal_id?: string
+          confidence_score?: number | null
+          created_at?: string | null
+          expert_id?: string
+          expert_notes?: string | null
+          expert_valuation?: number | null
+          id?: string
+          review_status?: string | null
+          reviewed_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "expert_reviews_appraisal_id_fkey"
+            columns: ["appraisal_id"]
+            isOneToOne: false
+            referencedRelation: "appraisals"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       market_data: {
         Row: {
           brand: string | null
@@ -290,31 +372,125 @@ export type Database = {
         }
         Relationships: []
       }
+      notifications: {
+        Row: {
+          created_at: string | null
+          id: string
+          is_read: boolean | null
+          message: string
+          notification_type: string | null
+          related_appraisal_id: string | null
+          title: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          is_read?: boolean | null
+          message: string
+          notification_type?: string | null
+          related_appraisal_id?: string | null
+          title: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          is_read?: boolean | null
+          message?: string
+          notification_type?: string | null
+          related_appraisal_id?: string | null
+          title?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "notifications_related_appraisal_id_fkey"
+            columns: ["related_appraisal_id"]
+            isOneToOne: false
+            referencedRelation: "appraisals"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      price_alerts: {
+        Row: {
+          alert_type: string
+          appraisal_id: string
+          created_at: string | null
+          id: string
+          is_active: boolean | null
+          last_triggered_at: string | null
+          threshold_percentage: number | null
+          threshold_value: number | null
+          user_id: string
+        }
+        Insert: {
+          alert_type: string
+          appraisal_id: string
+          created_at?: string | null
+          id?: string
+          is_active?: boolean | null
+          last_triggered_at?: string | null
+          threshold_percentage?: number | null
+          threshold_value?: number | null
+          user_id: string
+        }
+        Update: {
+          alert_type?: string
+          appraisal_id?: string
+          created_at?: string | null
+          id?: string
+          is_active?: boolean | null
+          last_triggered_at?: string | null
+          threshold_percentage?: number | null
+          threshold_value?: number | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "price_alerts_appraisal_id_fkey"
+            columns: ["appraisal_id"]
+            isOneToOne: false
+            referencedRelation: "appraisals"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       profiles: {
         Row: {
           avatar_url: string | null
           created_at: string | null
+          created_by: string | null
           email: string | null
           full_name: string | null
           id: string
+          is_admin: boolean | null
+          is_owner: boolean | null
           role: string | null
           updated_at: string | null
         }
         Insert: {
           avatar_url?: string | null
           created_at?: string | null
+          created_by?: string | null
           email?: string | null
           full_name?: string | null
           id: string
+          is_admin?: boolean | null
+          is_owner?: boolean | null
           role?: string | null
           updated_at?: string | null
         }
         Update: {
           avatar_url?: string | null
           created_at?: string | null
+          created_by?: string | null
           email?: string | null
           full_name?: string | null
           id?: string
+          is_admin?: boolean | null
+          is_owner?: boolean | null
           role?: string | null
           updated_at?: string | null
         }
@@ -401,6 +577,35 @@ export type Database = {
         }
         Relationships: []
       }
+      user_favorites: {
+        Row: {
+          appraisal_id: string
+          created_at: string | null
+          id: string
+          user_id: string
+        }
+        Insert: {
+          appraisal_id: string
+          created_at?: string | null
+          id?: string
+          user_id: string
+        }
+        Update: {
+          appraisal_id?: string
+          created_at?: string | null
+          id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_favorites_appraisal_id_fkey"
+            columns: ["appraisal_id"]
+            isOneToOne: false
+            referencedRelation: "appraisals"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       validation_layers: {
         Row: {
           appraisal_id: string | null
@@ -444,7 +649,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      promote_to_admin: {
+        Args: { user_email: string; is_owner_user?: boolean }
+        Returns: undefined
+      }
     }
     Enums: {
       [_ in never]: never

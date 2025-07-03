@@ -1,4 +1,4 @@
-import { Play, Pause, Star, Download, Heart } from "lucide-react";
+import { Play, Pause, Star, Download, Heart, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -74,6 +74,10 @@ export const ToneCard = ({ tone, category, isPlaying, onTogglePlay, index }: Ton
               </Badge>
               <Badge variant="outline" className="text-xs border-border-light text-text-secondary">
                 {duration}min
+              </Badge>
+              <Badge variant="outline" className="text-xs border-green-500/20 text-green-600 bg-green-500/10">
+                <Award className="w-3 h-3 mr-1" />
+                Certified
               </Badge>
             </div>
             
