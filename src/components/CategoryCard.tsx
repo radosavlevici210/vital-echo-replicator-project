@@ -14,9 +14,10 @@ interface CategoryCardProps {
   currentlyPlaying: string | null;
   onTogglePlay: (toneId: string) => void;
   index: number;
+  getToneDescription?: (toneName: string) => string;
 }
 
-export const CategoryCard = ({ category, currentlyPlaying, onTogglePlay, index }: CategoryCardProps) => {
+export const CategoryCard = ({ category, currentlyPlaying, onTogglePlay, index, getToneDescription }: CategoryCardProps) => {
   return (
     <div 
       className="space-y-4 animate-slide-up"
@@ -59,6 +60,7 @@ export const CategoryCard = ({ category, currentlyPlaying, onTogglePlay, index }
               isPlaying={currentlyPlaying === toneId}
               onTogglePlay={() => onTogglePlay(toneId)}
               index={toneIndex}
+              description={getToneDescription ? getToneDescription(tone) : undefined}
             />
           );
         })}

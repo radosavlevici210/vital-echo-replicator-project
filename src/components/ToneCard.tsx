@@ -15,9 +15,10 @@ interface ToneCardProps {
   isPlaying: boolean;
   onTogglePlay: () => void;
   index: number;
+  description?: string;
 }
 
-export const ToneCard = ({ tone, category, isPlaying, onTogglePlay, index }: ToneCardProps) => {
+export const ToneCard = ({ tone, category, isPlaying, onTogglePlay, index, description }: ToneCardProps) => {
   const [isFavorited, setIsFavorited] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   
@@ -57,15 +58,20 @@ export const ToneCard = ({ tone, category, isPlaying, onTogglePlay, index }: Ton
           </div>
         </div>
         
-        <div className="space-y-3">
-          <div>
-            <h3 className="font-playfair text-base font-semibold text-foreground leading-tight">
-              {tone}
-            </h3>
-            <p className="text-xs text-text-secondary mt-1">
-              {category.title}
-            </p>
-          </div>
+         <div className="space-y-3">
+           <div>
+             <h3 className="font-playfair text-base font-semibold text-foreground leading-tight">
+               {tone}
+             </h3>
+             <p className="text-xs text-text-secondary mt-1">
+               {category.title}
+             </p>
+             {description && (
+               <p className="text-xs text-text-secondary mt-2 leading-relaxed opacity-80">
+                 {description.length > 120 ? `${description.substring(0, 120)}...` : description}
+               </p>
+             )}
+           </div>
           
           <div className="flex items-center justify-between">
             <div className="flex space-x-2">
