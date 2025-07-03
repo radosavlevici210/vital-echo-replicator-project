@@ -1681,11 +1681,11 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
+      {/* Enhanced Footer with Copyright */}
       <footer style={{ 
         borderTop: '1px solid rgba(255, 255, 255, 0.1)', 
         padding: '60px 20px', 
-        background: 'rgba(0, 0, 0, 0.3)' 
+        background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(139, 92, 246, 0.1) 100%)'
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '40px', flexWrap: 'wrap', gap: '20px' }}>
@@ -1702,20 +1702,56 @@ const Index = () => {
               }}>
                 🎵
               </div>
-              <span style={{ fontSize: '20px', fontWeight: '700' }}>VitalTones</span>
+              <div>
+                <span style={{ fontSize: '20px', fontWeight: '700' }}>VitalTones™</span>
+                <p style={{ fontSize: '12px', color: '#9ca3af', margin: 0 }}>
+                  Quantum Frequency Revolution
+                </p>
+              </div>
             </div>
             
             <div style={{ display: 'flex', gap: '30px', flexWrap: 'wrap' }}>
               <a href="#" style={{ color: '#9ca3af', textDecoration: 'none', fontSize: '14px' }}>Privacy Policy</a>
               <a href="#" style={{ color: '#9ca3af', textDecoration: 'none', fontSize: '14px' }}>Terms of Service</a>
               <a href="#" style={{ color: '#9ca3af', textDecoration: 'none', fontSize: '14px' }}>Contact</a>
+              <a href="#" style={{ color: '#9ca3af', textDecoration: 'none', fontSize: '14px' }}>Licensing</a>
             </div>
           </div>
           
-          <div style={{ textAlign: 'center', paddingTop: '20px', borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}>
-            <p style={{ color: '#9ca3af', fontSize: '14px', margin: 0 }}>
-              © 2024 VitalTones. All rights reserved. Transforming minds through therapeutic sound.
-            </p>
+          {/* Copyright Information */}
+          <div style={{ 
+            textAlign: 'center', 
+            paddingTop: '30px', 
+            borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+            background: 'rgba(255, 255, 255, 0.02)',
+            borderRadius: '10px',
+            padding: '30px'
+          }}>
+            <div style={{ marginBottom: '20px' }}>
+              <p style={{ color: '#f3f4f6', fontSize: '16px', margin: '0 0 10px 0', fontWeight: '600' }}>
+                © 2024 VitalTones™ - All Rights Reserved | Protected by International Copyright Law
+              </p>
+              <p style={{ color: '#d1d5db', fontSize: '14px', margin: '0 0 15px 0' }}>
+                Created & Owned by: <strong>radosavlevici210@icloud.com</strong> & <strong>ervin210@icloud.com</strong>
+              </p>
+              <p style={{ color: '#9ca3af', fontSize: '12px', margin: 0, lineHeight: '1.6' }}>
+                🔒 This software contains proprietary algorithms and digital watermarks. Unauthorized reproduction, 
+                distribution, or commercial use without explicit written permission is strictly prohibited and may result in legal action.
+                All frequency databases, quantum protocols, and consciousness technologies are protected intellectual property.
+              </p>
+            </div>
+            
+            <div style={{
+              background: 'rgba(139, 92, 246, 0.1)',
+              border: '1px solid rgba(139, 92, 246, 0.3)',
+              borderRadius: '8px',
+              padding: '15px',
+              marginTop: '20px'
+            }}>
+              <p style={{ color: '#a855f7', fontSize: '14px', margin: 0, fontWeight: '500' }}>
+                🌟 Open Source License: Free for personal use | Enterprise licensing available
+              </p>
+            </div>
           </div>
         </div>
       </footer>

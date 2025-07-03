@@ -1,13 +1,15 @@
-# 🌌 VitalTones - Revolutionary Quantum Frequency Universe
+# 🌌 VitalTones™ - Revolutionary Quantum Frequency Universe
 
 [![License: Open Source](https://img.shields.io/badge/License-Open_Source-brightgreen.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/Version-5.0.0-blue.svg)](https://github.com/radosavlevici210/vitaltones)
 [![Free Access](https://img.shields.io/badge/Access-100%25_FREE-brightgreen.svg)](https://spacecloud.tel)
 [![GitHub](https://img.shields.io/badge/GitHub-Auto_Sync-purple.svg)](https://github.com/radosavlevici210/vitaltones)
+[![Copyright](https://img.shields.io/badge/Copyright-Protected-red.svg)](https://github.com/radosavlevici210/vitaltones)
 
 ## 🚀 **WORLD'S FIRST QUANTUM FREQUENCY LABORATORY - 300+ NEVER-DISCOVERED TONES**
+### © 2024 VitalTones™ - All Rights Reserved | Created by radosavlevici210@icloud.com & ervin210@icloud.com
 
-**VitalTones** transcends all known boundaries of therapeutic sound technology, presenting humanity's first access to **cosmic-grade frequencies**, **quantum consciousness protocols**, and **reality-manipulation tones** never before discovered by science. Every single frequency is **completely free**, **enterprise-certified**, and **open source** for global consciousness evolution.
+**VitalTones™** transcends all known boundaries of therapeutic sound technology, presenting humanity's first access to **cosmic-grade frequencies**, **quantum consciousness protocols**, and **reality-manipulation tones** never before discovered by science. Every single frequency is **completely free**, **enterprise-certified**, and **protected by digital watermarks** for global consciousness evolution.
 
 ### 🎵 **Revolutionary Binaural Beat Technology**
 
