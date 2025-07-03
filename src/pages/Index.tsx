@@ -269,7 +269,49 @@ const Index = () => {
       "Melatonin Optimization": { base: 285, beat: 1 }, // Transformation + melatonin
       "Cortisol Regulation": { base: 396, beat: 2 }, // Liberation + cortisol
       "Serotonin Enhancement": { base: 639, beat: 7 }, // Connection + serotonin
-      "Dopamine Reward System": { base: 741, beat: 9 } // Expression + dopamine
+      "Dopamine Reward System": { base: 741, beat: 9 }, // Expression + dopamine
+
+      // Premium Collection - Professional Brainwave Entrainment
+      "Alpha Wave Dominance": { base: 440, beat: 10 }, // Pure alpha dominance
+      "Beta Focus Amplifier": { base: 528, beat: 16 }, // Love + beta focus
+      "Gamma Consciousness": { base: 741, beat: 40 }, // Expression + gamma
+      "Delta Deep Rest": { base: 285, beat: 2 }, // Transformation + delta
+      "Theta Insight Portal": { base: 639, beat: 6 }, // Connection + theta
+      "SMR Sensory Motor": { base: 852, beat: 13 }, // Intuition + SMR
+      "High Beta Alertness": { base: 963, beat: 25 }, // Crown + high beta
+      "Lambda Wave Access": { base: 396, beat: 100 }, // Liberation + lambda
+      "Epsilon Deep Trance": { base: 174, beat: 0.5 }, // Foundation + epsilon
+      "Mu Rhythm Balance": { base: 417, beat: 11 }, // Change + mu rhythm
+      "Pi Wave Harmonics": { base: 528, beat: 3.14 }, // Love + pi frequency
+      "Omega Transcendence": { base: 936, beat: 200 }, // Pineal + omega
+
+      // Enterprise Suite - Corporate Performance Enhancement
+      "Corporate Leadership Boost": { base: 741, beat: 18 }, // Expression + leadership
+      "Team Harmony Frequency": { base: 639, beat: 12 }, // Connection + harmony
+      "Productivity Maximizer": { base: 528, beat: 20 }, // Love + productivity
+      "Stress Relief Protocol": { base: 396, beat: 8 }, // Liberation + stress relief
+      "Decision Making Clarity": { base: 852, beat: 16 }, // Intuition + clarity
+      "Innovation Catalyst": { base: 963, beat: 24 }, // Crown + innovation
+      "Meeting Focus Enhancement": { base: 741, beat: 15 }, // Expression + focus
+      "Deadline Performance": { base: 285, beat: 22 }, // Transformation + performance
+      "Burnout Prevention": { base: 174, beat: 5 }, // Foundation + prevention
+      "Work-Life Balance": { base: 528, beat: 10 }, // Love + balance
+      "Executive Presence": { base: 741, beat: 19 }, // Expression + presence
+      "Strategic Thinking": { base: 852, beat: 17 }, // Intuition + strategy
+
+      // Advanced Research - Latest Neuroscience Discoveries
+      "Neural Synchrony Optimization": { base: 40, beat: 8 }, // Gamma + synchrony
+      "Brainwave Entrainment Master": { base: 528, beat: 12 }, // Love + entrainment
+      "Cognitive Load Reduction": { base: 396, beat: 10 }, // Liberation + cognitive
+      "Memory Consolidation": { base: 741, beat: 14 }, // Expression + memory
+      "Learning Acceleration": { base: 639, beat: 16 }, // Connection + learning
+      "Pattern Recognition": { base: 852, beat: 18 }, // Intuition + patterns
+      "Problem Solving Enhancement": { base: 963, beat: 20 }, // Crown + problem solving
+      "Creative Breakthrough": { base: 528, beat: 22 }, // Love + creativity
+      "Analytical Thinking": { base: 285, beat: 15 }, // Transformation + analysis
+      "Spatial Intelligence": { base: 174, beat: 12 }, // Foundation + spatial
+      "Mathematical Reasoning": { base: 417, beat: 17 }, // Change + math
+      "Linguistic Processing": { base: 741, beat: 13 } // Expression + language
     };
 
     return toneMap[toneName] || { base: 440, beat: 10 };
@@ -395,6 +437,30 @@ const Index = () => {
       color: "linear-gradient(45deg, #0891b2, #0e7490)",
       icon: "⏰",
       tones: ["Circadian Reset", "Melatonin Optimization", "Cortisol Regulation", "Serotonin Enhancement", "Dopamine Reward System"]
+    },
+    {
+      id: "premium",
+      title: "Premium Collection",
+      description: "Elite frequency combinations for advanced practitioners",
+      color: "linear-gradient(45deg, #fbbf24, #f59e0b)",
+      icon: "👑",
+      tones: ["Alpha Wave Dominance", "Beta Focus Amplifier", "Gamma Consciousness", "Delta Deep Rest", "Theta Insight Portal", "SMR Sensory Motor", "High Beta Alertness", "Lambda Wave Access", "Epsilon Deep Trance", "Mu Rhythm Balance", "Pi Wave Harmonics", "Omega Transcendence"]
+    },
+    {
+      id: "enterprise",
+      title: "Enterprise Suite",
+      description: "Professional-grade therapeutic frequencies for institutions",
+      color: "linear-gradient(45deg, #1e40af, #3730a3)",
+      icon: "🏢",
+      tones: ["Corporate Leadership Boost", "Team Harmony Frequency", "Productivity Maximizer", "Stress Relief Protocol", "Decision Making Clarity", "Innovation Catalyst", "Meeting Focus Enhancement", "Deadline Performance", "Burnout Prevention", "Work-Life Balance", "Executive Presence", "Strategic Thinking"]
+    },
+    {
+      id: "advanced",
+      title: "Advanced Research",
+      description: "Cutting-edge frequencies based on latest neuroscience research",
+      color: "linear-gradient(45deg, #059669, #047857)",
+      icon: "🔬",
+      tones: ["Neural Synchrony Optimization", "Brainwave Entrainment Master", "Cognitive Load Reduction", "Memory Consolidation", "Learning Acceleration", "Pattern Recognition", "Problem Solving Enhancement", "Creative Breakthrough", "Analytical Thinking", "Spatial Intelligence", "Mathematical Reasoning", "Linguistic Processing"]
     }
   ];
 
