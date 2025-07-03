@@ -399,13 +399,6 @@ const Index = () => {
       "Biological Prime State": { base: 1920, beat: 61 }, // Biological prime
       "Enhanced Human Evolution": { base: 2240, beat: 69 }, // Human evolution
 
-      // Continue with remaining Body Vibration and Advanced frequencies...
-      "Enhanced Taste & Smell": { base: 1664, beat: 51 }, // Enhanced senses
-      "Accelerated Healing Factor": { base: 1984, beat: 63 }, // Healing factor
-      "Disease Immunity Boost": { base: 1408, beat: 43 }, // Disease immunity
-      "Longevity Gene Activation": { base: 2304, beat: 71 }, // Longevity genes
-      "Perfect Health Maintenance": { base: 1792, beat: 57 }, // Perfect health
-
       // NEW ADVANCED CATEGORIES - LATEST SCIENTIFIC DISCOVERIES
       
       // Quantum Enhancement - Ultra-high frequencies (2024 Research)
@@ -416,16 +409,6 @@ const Index = () => {
       "Dimensional Awareness": { base: 666, beat: 20 }, // Material mastery + dimension
       "Quantum Entanglement": { base: 1212, beat: 45 }, // Quantum connection + gamma
       "Zero Point Energy": { base: 1010, beat: 38 }, // Zero point + energy
-
-      // Psychic Powers - Latest Extrasensory Research
-      "Telepathic Communication": { base: 852, beat: 14 }, // Intuition + telepathy
-      "Clairvoyant Vision": { base: 963, beat: 12 }, // Crown + vision
-      "Psychokinetic Power": { base: 741, beat: 18 }, // Expression + telekinesis
-      "Precognitive Ability": { base: 639, beat: 16 }, // Connection + foresight
-      "Remote Viewing Mastery": { base: 528, beat: 14 }, // Love + remote viewing
-      "Astral Travel Mastery": { base: 936, beat: 6 }, // Pineal + astral
-      "Spirit Communication": { base: 1008, beat: 10 }, // Spiritual + communication
-      "Aura Reading Advanced": { base: 888, beat: 13 }, // Abundance + aura
 
       // Superhuman Abilities - Peak Human Enhancement
       "Superhuman Strength": { base: 174, beat: 30 }, // Foundation + strength
