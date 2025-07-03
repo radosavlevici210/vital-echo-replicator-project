@@ -522,12 +522,31 @@ const Index = () => {
 
   const toneCategories = [
     {
-      id: "skills",
-      title: "Advanced Skills Enhancement",
-      description: "Next-generation cognitive enhancement and genius-level abilities",
+      id: "quantum-consciousness",
+      title: "Quantum Consciousness Matrix",
+      description: "Revolutionary consciousness expansion using quantum field manipulation and dimensional frequency access for ultimate awareness",
+      color: "linear-gradient(45deg, #9333ea, #a855f7)",
+      icon: "🌌",
+      tones: [
+        "Quantum Mind Singularity", "Infinite Intelligence Protocol", "Cosmic Consciousness Grid", 
+        "Multidimensional Awareness Portal", "Universal Mind Network", "Quantum Reality Mastery",
+        "Dimensional Perception Engine", "Cosmic Intelligence Interface", "Quantum Thought Amplifier",
+        "Infinite Knowledge Database", "Reality Manipulation Matrix", "Quantum Consciousness Bridge",
+        "Universal Wisdom Access", "Cosmic Mind Sync", "Quantum Intelligence Boost"
+      ]
+    },
+    {
+      id: "advanced-skills",
+      title: "Ultra-Advanced Skills Matrix",
+      description: "Next-generation cognitive enhancement beyond human limits with quantum skill acceleration",
       color: "linear-gradient(45deg, #3b82f6, #8b5cf6)",
       icon: "🧠",
-      tones: ["Genius IQ Enhancement", "Quantum Focus Mastery", "Neural Cognitive Boost", "Memory Palace Builder", "Photographic Memory", "Polyglot Language Master", "Olympic Athletic Performance", "Virtuoso Musical Genius", "Perfect Pitch Vocal", "Wall Street Investor Mind", "Master Expert Flow State", "Einstein Fluid Intelligence"]
+      tones: [
+        "Genius IQ Enhancement", "Quantum Focus Mastery", "Neural Cognitive Boost", "Memory Palace Builder", 
+        "Photographic Memory", "Polyglot Language Master", "Olympic Athletic Performance", "Virtuoso Musical Genius", 
+        "Perfect Pitch Vocal", "Wall Street Investor Mind", "Master Expert Flow State", "Einstein Fluid Intelligence",
+        "Quantum Learning Accelerator", "Superhuman Pattern Recognition", "Instant Skill Acquisition"
+      ]
     },
     {
       id: "emotional",
