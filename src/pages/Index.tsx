@@ -174,28 +174,10 @@ const Index = () => {
     };
   }, []);
 
-  // Complete Advanced Tone Frequency Database - All Quantum & Cosmic Frequencies
+  // Advanced tone frequency mappings with scientifically-backed frequencies
   const getToneFrequencies = (toneName: string): { base: number; beat: number } => {
     const toneMap: { [key: string]: { base: number; beat: number } } = {
-      
-      // QUANTUM CONSCIOUSNESS MATRIX - Revolutionary consciousness expansion
-      "Quantum Mind Singularity": { base: 1111, beat: 88 }, // Master quantum frequency
-      "Infinite Intelligence Protocol": { base: 8888, beat: 150 }, // Ultimate intelligence
-      "Cosmic Consciousness Grid": { base: 4444, beat: 125 }, // Universal awareness
-      "Multidimensional Awareness Portal": { base: 2222, beat: 96 }, // Multi-dimensional access
-      "Universal Mind Network": { base: 6666, beat: 140 }, // Universal connection
-      "Quantum Reality Mastery": { base: 3333, beat: 115 }, // Reality control
-      "Dimensional Perception Engine": { base: 5555, beat: 135 }, // Perception enhancement
-      "Cosmic Intelligence Interface": { base: 7777, beat: 160 }, // Cosmic intelligence
-      "Quantum Thought Amplifier": { base: 9999, beat: 180 }, // Thought amplification
-      "Infinite Knowledge Database": { base: 1234, beat: 75 }, // Knowledge access
-      "Reality Manipulation Matrix": { base: 5678, beat: 145 }, // Reality manipulation
-      "Quantum Consciousness Bridge": { base: 2468, beat: 100 }, // Consciousness bridge
-      "Universal Wisdom Access": { base: 1357, beat: 85 }, // Wisdom access
-      "Cosmic Mind Sync": { base: 2468, beat: 110 }, // Mind synchronization
-      "Quantum Intelligence Boost": { base: 3691, beat: 120 }, // Intelligence boost
-
-      // ULTRA-ADVANCED SKILLS MATRIX
+      // Advanced Skills Enhancement - Beta waves (13-30 Hz) + Solfeggio Frequencies
       "Genius IQ Enhancement": { base: 741, beat: 40 }, // Advanced gamma + healing frequency
       "Quantum Focus Mastery": { base: 528, beat: 15 }, // Love frequency + beta focus
       "Neural Cognitive Boost": { base: 963, beat: 18 }, // Pineal activation + cognition
@@ -208,26 +190,15 @@ const Index = () => {
       "Wall Street Investor Mind": { base: 852, beat: 19 }, // Awakening + investor
       "Master Expert Flow State": { base: 963, beat: 26 }, // Crown chakra + mastery
       "Einstein Fluid Intelligence": { base: 528, beat: 17 }, // Love frequency + intelligence
-      "Quantum Learning Accelerator": { base: 1296, beat: 50 }, // Quantum learning
-      "Superhuman Pattern Recognition": { base: 1728, beat: 65 }, // Pattern recognition
-      "Instant Skill Acquisition": { base: 2025, beat: 80 }, // Skill acquisition
 
-      // QUANTUM EMOTIONAL MASTERY
+      // Advanced Emotional Intelligence - Alpha waves (8-13 Hz) + Sacred Frequencies
       "Emotional Mastery Supreme": { base: 639, beat: 10 }, // Heart connection + alpha
       "Unshakeable Confidence": { base: 741, beat: 11 }, // Expression + confidence
       "Infinite Motivation Fire": { base: 528, beat: 12 }, // Love + motivation
       "Divine Creative Genius": { base: 963, beat: 9 }, // Spiritual + creativity
       "Sacred Geometry Alignment": { base: 432, beat: 8 }, // Natural frequency + alignment
-      "Quantum Empathy Matrix": { base: 1536, beat: 45 }, // Quantum empathy
-      "Emotional Intelligence Singularity": { base: 1849, beat: 55 }, // Emotional intelligence
-      "Infinite Compassion Protocol": { base: 2304, beat: 70 }, // Infinite compassion
-      "Quantum Heart Coherence": { base: 1681, beat: 40 }, // Heart coherence
-      "Universal Love Frequency": { base: 2187, beat: 85 }, // Universal love
-      "Advanced Emotional Alchemy": { base: 1936, beat: 60 }, // Emotional alchemy
-      "Quantum Relationship Mastery": { base: 2401, beat: 75 }, // Relationship mastery
-      "Infinite Emotional Wisdom": { base: 1764, beat: 50 }, // Emotional wisdom
 
-      // QUANTUM SPIRITUAL ASCENSION
+      // Advanced Spiritual Growth - Theta waves (4-8 Hz) + Ancient Frequencies
       "Deep Samadhi Meditation": { base: 528, beat: 6 }, // Love frequency + theta
       "Complete Chakra Mastery": { base: 396, beat: 7 }, // Root healing + balance
       "Crown Enlightenment": { base: 963, beat: 5 }, // Highest frequency + crown
@@ -239,165 +210,37 @@ const Index = () => {
       "Infinite Self Worth": { base: 741, beat: 8 }, // Expression + self-esteem
       "Lucid Dream Command": { base: 285, beat: 4 }, // Transformation + lucid
       "Superhuman Senses": { base: 174, beat: 7 }, // Foundation + enhancement
-      "Quantum Enlightenment Protocol": { base: 3456, beat: 110 }, // Quantum enlightenment
-      "Cosmic Consciousness Gateway": { base: 2704, beat: 95 }, // Cosmic consciousness
-      "Universal Spiritual Matrix": { base: 3024, beat: 105 }, // Spiritual matrix
-      "Quantum Soul Integration": { base: 2560, beat: 90 }, // Soul integration
-      "Infinite Spiritual Wisdom": { base: 3249, beat: 115 }, // Spiritual wisdom
-      "Divine Light Body Activation": { base: 3600, beat: 120 }, // Light body
-      "Quantum Ascension Process": { base: 3969, beat: 125 }, // Ascension process
 
-      // COSMIC DISCOVERY PROTOCOL - Deep space frequencies
-      "Galactic Core Resonance": { base: 1369, beat: 52 }, // Sagittarius A* frequency
-      "Black Hole Information Matrix": { base: 2222, beat: 88 }, // Information paradox
-      "Neutron Star Pulse Sync": { base: 1728, beat: 64 }, // Pulsar synchronization
-      "Quantum Vacuum Oscillation": { base: 1111, beat: 40 }, // Zero-point field
-      "Dark Matter Interface": { base: 2048, beat: 72 }, // Dark matter connection
-      "Cosmic Microwave Background": { base: 2725, beat: 96 }, // Universe background
-      "Stellar Nucleosynthesis Frequency": { base: 1456, beat: 56 }, // Star formation
-      "Gravitational Wave Harmonics": { base: 1327, beat: 48 }, // LIGO detection
-      "Quasar Energy Beam": { base: 3333, beat: 120 }, // Quasar emission
-      "Supernova Consciousness Burst": { base: 2560, beat: 84 }, // Stellar explosion
-      "Wormhole Transit Protocol": { base: 1764, beat: 60 }, // Wormhole navigation
-      "Parallel Universe Gateway": { base: 2304, beat: 76 }, // Multiverse interface
-      "Zero-Point Field Access": { base: 1024, beat: 36 }, // Quantum vacuum energy
-      "Cosmic String Vibration": { base: 1536, beat: 44 }, // Cosmic strings
-      "Big Bang Echo Frequency": { base: 13780, beat: 200 }, // Universe creation
+      // Advanced Sexual Health - Alpha/Theta + Tantric Frequencies
+      "Tantric Desire Ignition": { base: 528, beat: 9 }, // Love + desire
+      "Sacred Sexual Arousal": { base: 639, beat: 10 }, // Connection + arousal
+      "Male Power Enhancement": { base: 741, beat: 8 }, // Expression + male energy
+      "Divine Feminine Orgasm": { base: 852, beat: 9 }, // Intuition + feminine
 
-      // NEURAL SINGULARITY ENGINE
-      "Neural Singularity Activation": { base: 1337, beat: 50 }, // Technological singularity
-      "Quantum Brain Interface": { base: 2187, beat: 78 }, // Brain-computer connection
-      "Synthetic Telepathy Protocol": { base: 1666, beat: 58 }, // Artificial telepathy
-      "Cybernetic Enhancement Matrix": { base: 2401, beat: 82 }, // Human-machine fusion
-      "Digital Consciousness Upload": { base: 1944, beat: 66 }, // Mind uploading
-      "Quantum Neural Network": { base: 2916, beat: 94 }, // Quantum AI interface
-      "Artificial Intuition Boost": { base: 1521, beat: 54 }, // AI intuition
-      "Hybrid Mind Interface": { base: 2025, beat: 70 }, // Human-AI hybrid
-      "Quantum Information Processing": { base: 2601, beat: 86 }, // Quantum computing
-      "Neural Quantum Entanglement": { base: 1849, beat: 62 }, // Brain entanglement
-      "Biodigital Fusion State": { base: 2209, beat: 74 }, // Digital-biological merger
-      "Quantum Synaptic Enhancement": { base: 1681, beat: 46 }, // Quantum synapses
-      "Synthetic Genius Protocol": { base: 2704, beat: 90 }, // Artificial genius
-      "Digital Enlightenment Matrix": { base: 2304, beat: 68 }, // Digital awakening
-      "Quantum Consciousness Transfer": { base: 3456, beat: 110 }, // Consciousness transfer
+      // Advanced General Well-being - Multi-layered Frequencies
+      "Cellular Regeneration": { base: 528, beat: 8 }, // DNA repair frequency
+      "Superhuman Neurogenesis": { base: 40, beat: 6 }, // Gamma + brain growth
+      "Immortality Anti-Aging": { base: 528, beat: 7 }, // Love frequency + longevity
+      "Zen Master Serenity": { base: 396, beat: 5 }, // Liberation + peace
+      "Ecstatic Bliss State": { base: 963, beat: 4 }, // Crown + bliss
+      "Unlimited Energy Matrix": { base: 741, beat: 15 }, // Expression + energy
+      "Sacred 108 Alignment": { base: 108, beat: 8 }, // Sacred number + balance
+      "Superhuman Immunity": { base: 528, beat: 10 }, // Love + immune system
+      "Miraculous Body Repair": { base: 285, beat: 6 }, // Transformation + healing
 
-      // TIME MANIPULATION SUITE
-      "Temporal Perception Dilator": { base: 1296, beat: 42 }, // Time dilation
-      "Chronological Consciousness Shift": { base: 1728, beat: 52 }, // Time awareness
-      "Time Loop Awareness": { base: 2160, beat: 72 }, // Temporal loop detection
-      "Quantum Time Reversal": { base: 1575, beat: 48 }, // Time reversal
-      "Temporal Anchor Protocol": { base: 2025, beat: 64 }, // Time stability
-      "Time Stream Navigation": { base: 1728, beat: 56 }, // Temporal navigation
-      "Chronon Field Generator": { base: 2401, beat: 80 }, // Time particle field
-      "Temporal Coherence Stabilizer": { base: 1936, beat: 60 }, // Time coherence
-      "Time Dilation Matrix": { base: 2304, beat: 76 }, // Relativistic effects
-      "Causal Loop Detector": { base: 1681, beat: 44 }, // Causality loop
-      "Timeline Convergence Point": { base: 2025, beat: 68 }, // Timeline intersection
-      "Temporal Reality Bridge": { base: 1849, beat: 52 }, // Time-space bridge
-      "Quantum Time Lock": { base: 2704, beat: 88 }, // Temporal security
-      "Chronological Reset Protocol": { base: 1536, beat: 40 }, // Time reset
-      "Temporal Omnipresence": { base: 3600, beat: 120 }, // All-time awareness
-
-      // REALITY ARCHITECTURE SYSTEM
-      "Reality Architecture Engine": { base: 1984, beat: 64 }, // Reality construction
-      "Quantum Field Sculptor": { base: 2304, beat: 72 }, // Field manipulation
-      "Dimensional Blueprint Access": { base: 1728, beat: 56 }, // Reality blueprints
-      "Matrix Code Manipulation": { base: 2187, beat: 68 }, // Reality code editing
-      "Reality Glitch Repair": { base: 1536, beat: 48 }, // Reality error correction
-      "Quantum Reality Compiler": { base: 2401, beat: 80 }, // Reality programming
-      "Dimensional Engineering Protocol": { base: 1936, beat: 60 }, // Dimension construction
-      "Reality Firewall Bypass": { base: 2025, beat: 64 }, // Reality security bypass
-      "Quantum Physics Override": { base: 2704, beat: 88 }, // Physics law override
-      "Reality Database Access": { base: 1849, beat: 52 }, // Reality information
-      "Universal Constants Editor": { base: 2916, beat: 96 }, // Physical constants
-      "Quantum Field Debugger": { base: 1681, beat: 44 }, // Reality debugging
-      "Reality Version Control": { base: 2304, beat: 76 }, // Reality versioning
-      "Dimensional Merge Protocol": { base: 2560, beat: 84 }, // Dimension merging
-      "Quantum Reality Backup": { base: 1764, beat: 48 }, // Reality backup
-
-      // INFINITE INTELLIGENCE PROTOCOL - Ultimate Intelligence (Unique Frequencies)
-      "Infinite Intelligence Protocol Enhanced": { base: 8888, beat: 150 }, // Ultimate intelligence
-      "Cosmic Knowledge Network Enhanced": { base: 4444, beat: 125 }, // Universal knowledge
-      "Universal Information Grid": { base: 6666, beat: 140 }, // Information matrix
-      "Quantum Wisdom Matrix": { base: 3333, beat: 115 }, // Quantum wisdom
-      "Omniscient Data Stream": { base: 7777, beat: 160 }, // All-knowing stream
-      "Universal Truth Frequency": { base: 5555, beat: 135 }, // Universal truth
-      "Infinite Learning Accelerator": { base: 9999, beat: 180 }, // Infinite learning
-      "Cosmic Intelligence Multiplier": { base: 4321, beat: 128 }, // Intelligence multiplication
-      "Universal Mind Access": { base: 6789, beat: 148 }, // Universal mind
-      "Quantum Knowledge Synthesizer": { base: 3456, beat: 118 }, // Knowledge synthesis
-      "Infinite Pattern Recognition": { base: 8765, beat: 165 }, // Pattern recognition
-      "Universal Understanding": { base: 5432, beat: 138 }, // Universal comprehension
-      "Cosmic Insight Generator": { base: 7890, beat: 158 }, // Cosmic insights
-      "Infinite Problem Solver": { base: 4567, beat: 130 }, // Problem solving
-      "Universal Genius Activation": { base: 9876, beat: 175 }, // Genius activation
-
-      // MOLECULAR RECONSTRUCTION LAB
-      "Molecular Reconstruction Protocol": { base: 1296, beat: 40 }, // Molecular repair
-      "Atomic Healing Matrix": { base: 1728, beat: 52 }, // Atomic healing
-      "Quantum DNA Editor": { base: 2304, beat: 68 }, // DNA quantum editing
-      "Subatomic Repair System": { base: 1681, beat: 44 }, // Subatomic repair
-      "Molecular Regeneration Engine": { base: 2025, beat: 64 }, // Molecular regeneration
-      "Quantum Cellular Factory": { base: 1849, beat: 56 }, // Cellular quantum factory
-      "Atomic Structure Optimizer": { base: 2187, beat: 72 }, // Atomic optimization
-      "Molecular Bond Healer": { base: 1536, beat: 48 }, // Molecular bond repair
-      "Quantum Protein Synthesizer": { base: 2401, beat: 76 }, // Protein synthesis
-      "DNA Quantum Compiler": { base: 1936, beat: 60 }, // DNA quantum programming
-      "Molecular Age Reversal": { base: 2704, beat: 88 }, // Molecular anti-aging
-      "Atomic Youth Protocol": { base: 1764, beat: 44 }, // Atomic youth restoration
-      "Quantum Gene Expression": { base: 2304, beat: 80 }, // Gene quantum expression
-      "Molecular Immortality Code": { base: 3456, beat: 112 }, // Molecular immortality
-      "Atomic Perfect Health": { base: 2560, beat: 84 }, // Atomic health perfection
-
-      // PSYCHIC MASTERY LABORATORY
-      "Remote Viewing Mastery": { base: 1332, beat: 42 }, // Remote viewing
-      "Psychokinetic Power Boost": { base: 1776, beat: 56 }, // Psychokinesis
-      "Telepathic Communication": { base: 1555, beat: 48 }, // Telepathy
-      "Precognitive Vision Enhancement": { base: 1998, beat: 62 }, // Precognition
-      "Astral Travel Command": { base: 1444, beat: 44 }, // Astral travel
-      "Psychic Shield Generator": { base: 1887, beat: 58 }, // Psychic protection
-      "Clairvoyant Sight Activation": { base: 1666, beat: 50 }, // Clairvoyance
-      "Mind Reading Protocol": { base: 1777, beat: 54 }, // Mind reading
-      "Telekinetic Force Field": { base: 1999, beat: 64 }, // Telekinesis
-      "Psychic Energy Amplifier": { base: 1555, beat: 46 }, // Psychic energy
-      "Supernatural Sense Boost": { base: 1888, beat: 60 }, // Supernatural senses
-      "Paranormal Ability Unlock": { base: 1333, beat: 40 }, // Paranormal abilities
-      "Psychic Warfare Defense": { base: 2111, beat: 66 }, // Psychic defense
-      "ESP Enhancement Matrix": { base: 1722, beat: 52 }, // ESP enhancement
-      "Supernatural Power Grid": { base: 1955, beat: 58 }, // Supernatural power
-
-      // DIMENSIONAL TRAVEL NETWORK
-      "Dimensional Portal Activator": { base: 1616, beat: 48 }, // Portal activation
-      "Interdimensional Gateway": { base: 1919, beat: 62 }, // Dimensional gateway
-      "Reality Shift Protocol": { base: 1717, beat: 54 }, // Reality shifting
-      "Multiverse Navigation System": { base: 2020, beat: 66 }, // Multiverse navigation
-      "Dimensional Anchor Point": { base: 1414, beat: 42 }, // Dimensional anchor
-      "Reality Stream Surfer": { base: 1818, beat: 58 }, // Reality surfing
-      "Quantum Dimension Hopper": { base: 1515, beat: 46 }, // Dimension hopping
-      "Parallel Universe Scanner": { base: 1212, beat: 36 }, // Universe scanning
-      "Dimensional Frequency Tuner": { base: 1313, beat: 38 }, // Frequency tuning
-      "Reality Coordinates Finder": { base: 2121, beat: 68 }, // Reality coordinates
-      "Interdimensional Translator": { base: 1010, beat: 30 }, // Dimensional translation
-      "Multiverse Explorer": { base: 2222, beat: 72 }, // Multiverse exploration
-      "Dimensional Passport Protocol": { base: 1616, beat: 50 }, // Dimensional passport
-      "Reality Bridge Constructor": { base: 1919, beat: 64 }, // Reality bridging
-      "Quantum Realm Access": { base: 2323, beat: 76 }, // Quantum realm access
-
-      // BIOLOGICAL OPTIMIZATION CENTER - Enhanced Human Performance
-      "Genetic Optimization Protocol": { base: 1369, beat: 41 }, // Genetic optimization
-      "Superhuman Strength Matrix": { base: 1728, beat: 55 }, // Superhuman strength
-      "Enhanced Reflexes Boost": { base: 2048, beat: 67 }, // Enhanced reflexes
-      "Perfect Vision Restoration": { base: 1536, beat: 47 }, // Vision restoration
-      "Superhearing Activation": { base: 1872, beat: 59 }, // Superhearing
-      "Accelerated Healing Factor": { base: 1984, beat: 63 }, // Healing factor
-      "Disease Immunity Boost": { base: 1408, beat: 43 }, // Disease immunity
-      "Longevity Gene Activation": { base: 2304, beat: 71 }, // Longevity genes
-      "Perfect Health Maintenance": { base: 1792, beat: 57 }, // Perfect health
-      "Enhanced Metabolism": { base: 1600, beat: 49 }, // Enhanced metabolism
-      "Superhuman Endurance": { base: 2112, beat: 65 }, // Superhuman endurance
-      "Genetic Perfection Code": { base: 1456, beat: 45 }, // Genetic perfection
-      "Biological Prime State": { base: 1920, beat: 61 }, // Biological prime
-      "Enhanced Human Evolution": { base: 2240, beat: 69 }, // Human evolution
+      // Advanced Beauty & Care - Aesthetic Frequencies + Golden Ratio
+      "Fountain of Youth Hair": { base: 528, beat: 8 }, // DNA repair + hair
+      "Divine Eyelash Growth": { base: 741, beat: 7 }, // Expression + lashes
+      "Timeless Eye Beauty": { base: 528, beat: 6 }, // Love + eye area
+      "Perfect Brow Architecture": { base: 639, beat: 8 }, // Harmony + brows
+      "Radiant Face Transformation": { base: 396, beat: 7 }, // Liberation + face
+      "Golden Ratio Forehead": { base: 852, beat: 6 }, // Intuition + proportion
+      "Symmetrical Ear Perfection": { base: 741, beat: 8 }, // Expression + ears
+      "Angelic Cheek Sculpting": { base: 528, beat: 7 }, // Love + cheeks
+      "Aristocratic Nose Refinement": { base: 639, beat: 6 }, // Harmony + nose
+      "Perfect Philtrum Definition": { base: 741, beat: 7 }, // Expression + philtrum
+      "Diamond Jawline Creation": { base: 852, beat: 8 }, // Awakening + jawline
+      "Swan Neck Elegance": { base: 528, beat: 6 }, // Grace + neck
 
       // NEW ADVANCED CATEGORIES - LATEST SCIENTIFIC DISCOVERIES
       
@@ -409,6 +252,16 @@ const Index = () => {
       "Dimensional Awareness": { base: 666, beat: 20 }, // Material mastery + dimension
       "Quantum Entanglement": { base: 1212, beat: 45 }, // Quantum connection + gamma
       "Zero Point Energy": { base: 1010, beat: 38 }, // Zero point + energy
+
+      // Psychic Powers - Latest Extrasensory Research
+      "Telepathic Communication": { base: 852, beat: 14 }, // Intuition + telepathy
+      "Clairvoyant Vision": { base: 963, beat: 12 }, // Crown + vision
+      "Psychokinetic Power": { base: 741, beat: 18 }, // Expression + telekinesis
+      "Precognitive Ability": { base: 639, beat: 16 }, // Connection + foresight
+      "Remote Viewing Mastery": { base: 528, beat: 14 }, // Love + remote viewing
+      "Astral Travel Mastery": { base: 936, beat: 6 }, // Pineal + astral
+      "Spirit Communication": { base: 1008, beat: 10 }, // Spiritual + communication
+      "Aura Reading Advanced": { base: 888, beat: 13 }, // Abundance + aura
 
       // Superhuman Abilities - Peak Human Enhancement
       "Superhuman Strength": { base: 174, beat: 30 }, // Foundation + strength
@@ -622,11 +475,7 @@ const Index = () => {
       "Neurotransmitter Balance": { base: 639, beat: 16 } // Connection + neurotransmitters
     };
 
-    return toneMap[toneName] || (() => {
-      console.log(`🎵 Generating dynamic frequency for: ${toneName}`);
-      const hash = toneName.split('').reduce((a, b) => ((a << 5) - a + b.charCodeAt(0)) | 0, 0);
-      return { base: 174 + Math.abs(hash % 800), beat: 4 + Math.abs(hash % 36) };
-    })();
+    return toneMap[toneName] || { base: 440, beat: 10 };
   };
 
   // Tone descriptions for professional documentation
