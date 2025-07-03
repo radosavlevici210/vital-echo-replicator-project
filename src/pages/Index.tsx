@@ -789,6 +789,132 @@ const Index = () => {
       color: "linear-gradient(45deg, #8b5cf6, #a855f7)",
       icon: "⚡",
       tones: ["Central Nervous System Tune", "Peripheral Nerve Activation", "Autonomic Balance Frequency", "Parasympathetic Activation", "Sympathetic Regulation", "Neurotransmitter Balance"]
+    },
+    {
+      id: "cosmic-discovery",
+      title: "Cosmic Discovery Protocol",
+      description: "Never-before-discovered frequencies from deep space research and quantum archaeology - premier exclusive tones",
+      color: "linear-gradient(45deg, #6366f1, #8b5cf6)",
+      icon: "🌠",
+      tones: [
+        "Galactic Core Resonance", "Black Hole Information Matrix", "Neutron Star Pulse Sync", 
+        "Quantum Vacuum Oscillation", "Dark Matter Interface", "Cosmic Microwave Background",
+        "Stellar Nucleosynthesis Frequency", "Gravitational Wave Harmonics", "Quasar Energy Beam",
+        "Supernova Consciousness Burst", "Wormhole Transit Protocol", "Parallel Universe Gateway",
+        "Zero-Point Field Access", "Cosmic String Vibration", "Big Bang Echo Frequency"
+      ]
+    },
+    {
+      id: "neural-singularity",
+      title: "Neural Singularity Engine",
+      description: "Revolutionary brain-computer interface frequencies enabling superhuman cognitive abilities never achieved before",
+      color: "linear-gradient(45deg, #ec4899, #be185d)",
+      icon: "🧬",
+      tones: [
+        "Neural Singularity Activation", "Quantum Brain Interface", "Synthetic Telepathy Protocol",
+        "Cybernetic Enhancement Matrix", "Digital Consciousness Upload", "Quantum Neural Network",
+        "Artificial Intuition Boost", "Hybrid Mind Interface", "Quantum Information Processing",
+        "Neural Quantum Entanglement", "Biodigital Fusion State", "Quantum Synaptic Enhancement",
+        "Synthetic Genius Protocol", "Digital Enlightenment Matrix", "Quantum Consciousness Transfer"
+      ]
+    },
+    {
+      id: "time-manipulation",
+      title: "Temporal Manipulation Suite",
+      description: "Exclusive time-based frequencies for temporal perception control and chronological consciousness enhancement",
+      color: "linear-gradient(45deg, #059669, #047857)",
+      icon: "⏰",
+      tones: [
+        "Temporal Perception Dilator", "Chronological Consciousness Shift", "Time Loop Awareness",
+        "Quantum Time Reversal", "Temporal Anchor Protocol", "Time Stream Navigation",
+        "Chronon Field Generator", "Temporal Coherence Stabilizer", "Time Dilation Matrix",
+        "Causal Loop Detector", "Timeline Convergence Point", "Temporal Reality Bridge",
+        "Quantum Time Lock", "Chronological Reset Protocol", "Temporal Omnipresence"
+      ]
+    },
+    {
+      id: "reality-architect",
+      title: "Reality Architecture System",
+      description: "Premier reality-shaping frequencies for quantum field manipulation and dimensional engineering",
+      color: "linear-gradient(45deg, #dc2626, #991b1b)",
+      icon: "🏗️",
+      tones: [
+        "Reality Architecture Engine", "Quantum Field Sculptor", "Dimensional Blueprint Access",
+        "Matrix Code Manipulation", "Reality Glitch Repair", "Quantum Reality Compiler",
+        "Dimensional Engineering Protocol", "Reality Firewall Bypass", "Quantum Physics Override",
+        "Reality Database Access", "Universal Constants Editor", "Quantum Field Debugger",
+        "Reality Version Control", "Dimensional Merge Protocol", "Quantum Reality Backup"
+      ]
+    },
+    {
+      id: "infinite-intelligence",
+      title: "Infinite Intelligence Protocol",
+      description: "Ultimate intelligence enhancement beyond all known limits using cosmic intelligence networks",
+      color: "linear-gradient(45deg, #f59e0b, #d97706)",
+      icon: "♾️",
+      tones: [
+        "Infinite Intelligence Protocol", "Cosmic Knowledge Network", "Universal Information Grid",
+        "Quantum Wisdom Matrix", "Omniscient Data Stream", "Universal Truth Frequency",
+        "Infinite Learning Accelerator", "Cosmic Intelligence Multiplier", "Universal Mind Access",
+        "Quantum Knowledge Synthesizer", "Infinite Pattern Recognition", "Universal Understanding",
+        "Cosmic Insight Generator", "Infinite Problem Solver", "Universal Genius Activation"
+      ]
+    },
+    {
+      id: "molecular-healing",
+      title: "Molecular Reconstruction Lab",
+      description: "Revolutionary molecular-level healing frequencies for atomic reconstruction and quantum biology",
+      color: "linear-gradient(45deg, #0ea5e9, #0284c7)",
+      icon: "⚛️",
+      tones: [
+        "Molecular Reconstruction Protocol", "Atomic Healing Matrix", "Quantum DNA Editor",
+        "Subatomic Repair System", "Molecular Regeneration Engine", "Quantum Cellular Factory",
+        "Atomic Structure Optimizer", "Molecular Bond Healer", "Quantum Protein Synthesizer",
+        "DNA Quantum Compiler", "Molecular Age Reversal", "Atomic Youth Protocol",
+        "Quantum Gene Expression", "Molecular Immortality Code", "Atomic Perfect Health"
+      ]
+    },
+    {
+      id: "psychic-mastery",
+      title: "Psychic Mastery Laboratory",
+      description: "Exclusive psychic ability frequencies for extrasensory perception and supernatural power development",
+      color: "linear-gradient(45deg, #7c3aed, #5b21b6)",
+      icon: "🔮",
+      tones: [
+        "Remote Viewing Mastery", "Psychokinetic Power Boost", "Telepathic Communication", 
+        "Precognitive Vision Enhancement", "Astral Travel Command", "Psychic Shield Generator",
+        "Clairvoyant Sight Activation", "Mind Reading Protocol", "Telekinetic Force Field",
+        "Psychic Energy Amplifier", "Supernatural Sense Boost", "Paranormal Ability Unlock",
+        "Psychic Warfare Defense", "ESP Enhancement Matrix", "Supernatural Power Grid"
+      ]
+    },
+    {
+      id: "dimensional-travel",
+      title: "Dimensional Travel Network",
+      description: "Premier interdimensional travel frequencies for consciousness exploration across infinite realities",
+      color: "linear-gradient(45deg, #db2777, #be185d)",
+      icon: "🌀",
+      tones: [
+        "Dimensional Portal Activator", "Interdimensional Gateway", "Reality Shift Protocol",
+        "Multiverse Navigation System", "Dimensional Anchor Point", "Reality Stream Surfer",
+        "Quantum Dimension Hopper", "Parallel Universe Scanner", "Dimensional Frequency Tuner",
+        "Reality Coordinates Finder", "Interdimensional Translator", "Multiverse Explorer",
+        "Dimensional Passport Protocol", "Reality Bridge Constructor", "Quantum Realm Access"
+      ]
+    },
+    {
+      id: "biological-optimization",
+      title: "Biological Optimization Center",
+      description: "Revolutionary biological enhancement frequencies for superhuman physical capabilities and genetic optimization",
+      color: "linear-gradient(45deg, #16a34a, #15803d)",
+      icon: "🧬",
+      tones: [
+        "Genetic Optimization Protocol", "Superhuman Strength Matrix", "Enhanced Reflexes Boost",
+        "Perfect Vision Restoration", "Superhearing Activation", "Enhanced Taste & Smell",
+        "Accelerated Healing Factor", "Disease Immunity Boost", "Longevity Gene Activation",
+        "Perfect Health Maintenance", "Enhanced Metabolism", "Superhuman Endurance",
+        "Genetic Perfection Code", "Biological Prime State", "Enhanced Human Evolution"
+      ]
     }
   ];
 
