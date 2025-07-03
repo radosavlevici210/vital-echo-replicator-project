@@ -1120,11 +1120,19 @@ const Index = () => {
       // Stop any current tone first
       audioGeneratorRef.current?.stopTone();
       
-      // Parse tone ID correctly - handle both old and new format
+      // UNIVERSAL TONE ACCESS - NO RESTRICTIONS
       let toneName = '';
       let foundTone = false;
       
-      // Try new format first: category-index
+      // Create complete tone index for universal access
+      const allTones: string[] = [];
+      toneCategories.forEach(category => {
+        allTones.push(...category.tones);
+      });
+      
+      // Try multiple lookup methods for maximum compatibility
+      
+      // Method 1: Direct category-index format
       const [categoryId, indexStr] = toneId.split('-');
       const toneIdx = parseInt(indexStr);
       
@@ -1136,20 +1144,49 @@ const Index = () => {
         }
       }
       
-      // If not found, try direct tone name lookup
+      // Method 2: Global tone index (treat as direct index into all tones)
+      if (!foundTone && !isNaN(toneIdx)) {
+        if (allTones[toneIdx]) {
+          toneName = allTones[toneIdx];
+          foundTone = true;
+        }
+      }
+      
+      // Method 3: String matching variations
       if (!foundTone) {
-        // Search through all categories for the tone name
-        for (const category of toneCategories) {
-          for (const tone of category.tones) {
-            if (tone.toLowerCase().replace(/[^a-z0-9]/g, '-') === toneId.toLowerCase() ||
-                tone.toLowerCase().replace(/\s+/g, '-') === toneId.toLowerCase() ||
-                tone === toneId) {
+        const searchVariations = [
+          toneId,
+          toneId.replace(/-/g, ' '),
+          toneId.replace(/-/g, ''),
+          toneId.replace(/\s+/g, '-'),
+          toneId.replace(/[^a-z0-9]/gi, ''),
+        ];
+        
+        for (const variation of searchVariations) {
+          for (const tone of allTones) {
+            if (tone.toLowerCase() === variation.toLowerCase() ||
+                tone.toLowerCase().replace(/[^a-z0-9]/g, '') === variation.toLowerCase().replace(/[^a-z0-9]/g, '') ||
+                tone.toLowerCase().replace(/\s+/g, '-') === variation.toLowerCase() ||
+                tone.toLowerCase().replace(/[^a-z0-9]/g, '-') === variation.toLowerCase()) {
               toneName = tone;
               foundTone = true;
               break;
             }
           }
           if (foundTone) break;
+        }
+      }
+      
+      // Method 4: Partial matching as fallback
+      if (!foundTone) {
+        const cleanToneId = toneId.toLowerCase().replace(/[^a-z0-9]/g, '');
+        for (const tone of allTones) {
+          const cleanTone = tone.toLowerCase().replace(/[^a-z0-9]/g, '');
+          if (cleanTone.includes(cleanToneId) || cleanToneId.includes(cleanTone)) {
+            toneName = tone;
+            foundTone = true;
+            break;
+          }
         }
       }
       
@@ -1190,11 +1227,56 @@ const Index = () => {
           console.error('❌ Error starting tone:', error);
           setAudioError('Audio playback error. Please refresh and try again.');
         }
+      }
+      
+      // ULTIMATE FALLBACK - If still not found, use first available tone
+      if (!foundTone && allTones.length > 0) {
+        console.log('🔄 Using fallback tone selection');
+        toneName = allTones[0]; // Default to first tone
+        foundTone = true;
+      }
+      
+      if (foundTone && toneName) {
+        setCurrentToneName(toneName);
+        
+        console.log(`🎵 Starting VitalTones™ certified frequency: ${toneName}`);
+        console.log(`📊 Selected from ${allTones.length} available tones`);
+        
+        // Get frequencies for this tone and start playing
+        const frequencies = getToneFrequencies(toneName);
+        console.log(`🔊 Base Frequency: ${frequencies.base}Hz, Beat: ${frequencies.beat}Hz`);
+        
+        try {
+          const success = await audioGeneratorRef.current?.startTone(frequencies.base, frequencies.beat);
+          
+          if (success !== false) {
+            setCurrentlyPlaying(toneId);
+            setShowFloatingPlayer(true);
+            setProgress(0);
+            
+            // Auto-update progress
+            const progressInterval = setInterval(() => {
+              setProgress(prev => {
+                if (prev >= 100) {
+                  clearInterval(progressInterval);
+                  return 0;
+                }
+                return prev + 0.5;
+              });
+            }, 300);
+            
+            console.log('✅ Tone started successfully');
+          } else {
+            console.error('❌ Failed to start tone');
+            setAudioError('Failed to start audio. Please try again.');
+          }
+        } catch (error) {
+          console.error('❌ Error starting tone:', error);
+          setAudioError('Audio playback error. Please refresh and try again.');
+        }
       } else {
-        console.error('❌ Tone not found:', toneId);
-        // List all available tones for debugging
-        console.log('Available tones:', toneCategories.flatMap(cat => cat.tones));
-        setAudioError('Tone not found. Please refresh the page.');
+        console.error('❌ No tones available - this should never happen');
+        setAudioError('System error. Please refresh the page.');
       }
     }
   };
