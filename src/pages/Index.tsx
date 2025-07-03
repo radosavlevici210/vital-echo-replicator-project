@@ -311,7 +311,112 @@ const Index = () => {
       "Analytical Thinking": { base: 285, beat: 15 }, // Transformation + analysis
       "Spatial Intelligence": { base: 174, beat: 12 }, // Foundation + spatial
       "Mathematical Reasoning": { base: 417, beat: 17 }, // Change + math
-      "Linguistic Processing": { base: 741, beat: 13 } // Expression + language
+      "Linguistic Processing": { base: 741, beat: 13 }, // Expression + language
+
+      // BODY VIBRATIONS - Physical Resonance Technology
+      
+      // Full Body Vibration - Complete Body Harmonics
+      "Total Body Resonance": { base: 174, beat: 7.83 }, // Foundation + Schumann resonance
+      "Whole Body Cellular Vibration": { base: 528, beat: 8 }, // Love + cellular vibration
+      "Complete Muscle Activation": { base: 285, beat: 15 }, // Transformation + muscle stimulation
+      "Full Body Energy Field": { base: 741, beat: 20 }, // Expression + energy field
+      "Master Body Frequency": { base: 963, beat: 12 }, // Crown + master vibration
+      "Systemic Body Resonance": { base: 639, beat: 18 }, // Connection + systemic vibration
+      
+      // Head & Brain Vibrations - Neural Stimulation
+      "Brain Cortex Vibration": { base: 40, beat: 25 }, // Gamma + cortex stimulation
+      "Skull Resonance Therapy": { base: 852, beat: 14 }, // Intuition + skull vibration
+      "Cranial Nerve Activation": { base: 741, beat: 16 }, // Expression + cranial nerves
+      "Cerebellum Balance Vibration": { base: 396, beat: 10 }, // Liberation + balance
+      "Pineal Gland Physical Pulse": { base: 936, beat: 8 }, // Pineal + physical pulse
+      "Neural Pathway Vibration": { base: 528, beat: 22 }, // Love + neural pathways
+      
+      // Neck & Throat Vibrations - Cervical Resonance
+      "Neck Muscle Deep Vibration": { base: 174, beat: 12 }, // Foundation + neck muscles
+      "Throat Chakra Physical Pulse": { base: 741, beat: 9 }, // Expression + throat
+      "Cervical Spine Alignment": { base: 285, beat: 11 }, // Transformation + cervical
+      "Vocal Cord Vibration Therapy": { base: 852, beat: 13 }, // Intuition + vocal cords
+      "Thyroid Gland Stimulation": { base: 639, beat: 7 }, // Connection + thyroid
+      
+      // Chest & Heart Vibrations - Cardiac Resonance
+      "Heart Muscle Vibration": { base: 528, beat: 6 }, // Love + heart muscle
+      "Chest Cavity Resonance": { base: 639, beat: 8 }, // Connection + chest
+      "Lung Tissue Vibration": { base: 396, beat: 12 }, // Liberation + lungs
+      "Ribcage Harmonic Pulse": { base: 741, beat: 10 }, // Expression + ribcage
+      "Cardiac Rhythm Synchronization": { base: 285, beat: 5 }, // Transformation + cardiac
+      "Pectoral Muscle Activation": { base: 174, beat: 14 }, // Foundation + pectorals
+      
+      // Arms & Hands Vibrations - Upper Extremity Resonance
+      "Shoulder Muscle Deep Pulse": { base: 852, beat: 15 }, // Intuition + shoulders
+      "Bicep Tricep Vibration": { base: 741, beat: 18 }, // Expression + arm muscles
+      "Forearm Tension Release": { base: 396, beat: 9 }, // Liberation + forearms
+      "Hand Circulation Boost": { base: 639, beat: 11 }, // Connection + hands
+      "Finger Nerve Activation": { base: 285, beat: 13 }, // Transformation + fingers
+      "Wrist Joint Mobility": { base: 528, beat: 7 }, // Love + wrists
+      
+      // Core & Abdominal Vibrations - Central Body Power
+      "Deep Core Muscle Vibration": { base: 174, beat: 16 }, // Foundation + core
+      "Abdominal Wall Stimulation": { base: 285, beat: 19 }, // Transformation + abs
+      "Diaphragm Breathing Pulse": { base: 396, beat: 6 }, // Liberation + diaphragm
+      "Solar Plexus Energy Vibration": { base: 528, beat: 10 }, // Love + solar plexus
+      "Lower Back Support Frequency": { base: 741, beat: 8 }, // Expression + lower back
+      "Spinal Column Alignment": { base: 852, beat: 12 }, // Intuition + spine
+      
+      // Hips & Pelvis Vibrations - Pelvic Floor Activation
+      "Hip Flexor Release Vibration": { base: 639, beat: 14 }, // Connection + hip flexors
+      "Pelvic Floor Strengthening": { base: 285, beat: 17 }, // Transformation + pelvic floor
+      "Glute Muscle Activation": { base: 174, beat: 20 }, // Foundation + glutes
+      "Sacral Chakra Physical Pulse": { base: 417, beat: 8 }, // Change + sacral
+      "Hip Joint Mobility Enhancement": { base: 528, beat: 9 }, // Love + hip joints
+      "Pelvic Circulation Boost": { base: 741, beat: 11 }, // Expression + pelvic circulation
+      
+      // Legs & Thighs Vibrations - Lower Body Power
+      "Quadriceps Power Vibration": { base: 852, beat: 22 }, // Intuition + quads
+      "Hamstring Flexibility Pulse": { base: 396, beat: 13 }, // Liberation + hamstrings
+      "Calf Muscle Deep Stimulation": { base: 285, beat: 16 }, // Transformation + calves
+      "Thigh Circulation Enhancement": { base: 639, beat: 15 }, // Connection + thigh circulation
+      "Knee Joint Repair Frequency": { base: 741, beat: 7 }, // Expression + knees
+      "Leg Lymphatic Drainage": { base: 528, beat: 12 }, // Love + lymphatic
+      
+      // Feet & Ankles Vibrations - Foundation Grounding
+      "Foot Arch Support Vibration": { base: 174, beat: 9 }, // Foundation + foot arch
+      "Ankle Flexibility Enhancement": { base: 285, beat: 11 }, // Transformation + ankles
+      "Toe Circulation Activation": { base: 396, beat: 6 }, // Liberation + toes
+      "Heel Pain Relief Frequency": { base: 741, beat: 5 }, // Expression + heel relief
+      "Plantar Fascia Healing": { base: 528, beat: 8 }, // Love + plantar fascia
+      "Grounding Earth Connection": { base: 7.83, beat: 3 }, // Schumann + grounding
+      
+      // Internal Organs - Visceral Vibration Therapy
+      "Liver Detox Vibration": { base: 528, beat: 4 }, // Love + liver detox
+      "Kidney Filtration Enhancement": { base: 741, beat: 6 }, // Expression + kidneys
+      "Stomach Digestion Pulse": { base: 639, beat: 8 }, // Connection + stomach
+      "Intestinal Health Frequency": { base: 396, beat: 5 }, // Liberation + intestines
+      "Pancreas Function Boost": { base: 852, beat: 7 }, // Intuition + pancreas
+      "Bladder Muscle Tone": { base: 285, beat: 9 }, // Transformation + bladder
+      
+      // Advanced Muscle Groups - Specialized Targeting
+      "Deep Fascia Release": { base: 174, beat: 8 }, // Foundation + fascia
+      "Muscle Fiber Regeneration": { base: 528, beat: 15 }, // Love + muscle regeneration
+      "Tendon Strength Enhancement": { base: 741, beat: 12 }, // Expression + tendons
+      "Ligament Flexibility Boost": { base: 639, beat: 10 }, // Connection + ligaments
+      "Joint Cartilage Repair": { base: 285, beat: 6 }, // Transformation + cartilage
+      "Bone Density Vibration": { base: 852, beat: 14 }, // Intuition + bone density
+      
+      // Blood & Circulation - Vascular Resonance
+      "Blood Flow Acceleration": { base: 396, beat: 18 }, // Liberation + blood flow
+      "Arterial Health Vibration": { base: 528, beat: 13 }, // Love + arteries
+      "Venous Return Enhancement": { base: 741, beat: 16 }, // Expression + veins
+      "Capillary Microcirculation": { base: 639, beat: 20 }, // Connection + capillaries
+      "Heart Rate Variability": { base: 285, beat: 4 }, // Transformation + HRV
+      "Blood Pressure Regulation": { base: 174, beat: 2 }, // Foundation + blood pressure
+      
+      // Nervous System - Neural Vibration Network
+      "Central Nervous System Tune": { base: 963, beat: 40 }, // Crown + CNS
+      "Peripheral Nerve Activation": { base: 852, beat: 28 }, // Intuition + peripheral nerves
+      "Autonomic Balance Frequency": { base: 741, beat: 24 }, // Expression + autonomic
+      "Parasympathetic Activation": { base: 528, beat: 3 }, // Love + parasympathetic
+      "Sympathetic Regulation": { base: 396, beat: 12 }, // Liberation + sympathetic
+      "Neurotransmitter Balance": { base: 639, beat: 16 } // Connection + neurotransmitters
     };
 
     return toneMap[toneName] || { base: 440, beat: 10 };
@@ -461,6 +566,112 @@ const Index = () => {
       color: "linear-gradient(45deg, #059669, #047857)",
       icon: "🔬",
       tones: ["Neural Synchrony Optimization", "Brainwave Entrainment Master", "Cognitive Load Reduction", "Memory Consolidation", "Learning Acceleration", "Pattern Recognition", "Problem Solving Enhancement", "Creative Breakthrough", "Analytical Thinking", "Spatial Intelligence", "Mathematical Reasoning", "Linguistic Processing"]
+    },
+    
+    // NEW BODY VIBRATION CATEGORIES - WORLD'S MOST ADVANCED
+    {
+      id: "fullbody",
+      title: "Total Body Vibration",
+      description: "Complete physical resonance and cellular vibration therapy",
+      color: "linear-gradient(45deg, #dc2626, #b91c1c)",
+      icon: "🔥",
+      tones: ["Total Body Resonance", "Whole Body Cellular Vibration", "Complete Muscle Activation", "Full Body Energy Field", "Master Body Frequency", "Systemic Body Resonance"]
+    },
+    {
+      id: "headbrain",
+      title: "Head & Brain Vibrations",
+      description: "Advanced neural stimulation and cranial resonance therapy",
+      color: "linear-gradient(45deg, #7c3aed, #5b21b6)",
+      icon: "🧠",
+      tones: ["Brain Cortex Vibration", "Skull Resonance Therapy", "Cranial Nerve Activation", "Cerebellum Balance Vibration", "Pineal Gland Physical Pulse", "Neural Pathway Vibration"]
+    },
+    {
+      id: "neckthroat",
+      title: "Neck & Throat Vibrations",
+      description: "Cervical spine alignment and vocal resonance activation",
+      color: "linear-gradient(45deg, #0891b2, #0e7490)",
+      icon: "🎵",
+      tones: ["Neck Muscle Deep Vibration", "Throat Chakra Physical Pulse", "Cervical Spine Alignment", "Vocal Cord Vibration Therapy", "Thyroid Gland Stimulation"]
+    },
+    {
+      id: "chestheart",
+      title: "Chest & Heart Vibrations",
+      description: "Cardiac resonance and respiratory muscle activation",
+      color: "linear-gradient(45deg, #dc2626, #ef4444)",
+      icon: "❤️",
+      tones: ["Heart Muscle Vibration", "Chest Cavity Resonance", "Lung Tissue Vibration", "Ribcage Harmonic Pulse", "Cardiac Rhythm Synchronization", "Pectoral Muscle Activation"]
+    },
+    {
+      id: "armshands",
+      title: "Arms & Hands Vibrations",
+      description: "Upper extremity muscle activation and circulation boost",
+      color: "linear-gradient(45deg, #ea580c, #f97316)",
+      icon: "🤲",
+      tones: ["Shoulder Muscle Deep Pulse", "Bicep Tricep Vibration", "Forearm Tension Release", "Hand Circulation Boost", "Finger Nerve Activation", "Wrist Joint Mobility"]
+    },
+    {
+      id: "coreabs",
+      title: "Core & Abdominal Power",
+      description: "Central body strength and deep core muscle activation",
+      color: "linear-gradient(45deg, #f59e0b, #eab308)",
+      icon: "💪",
+      tones: ["Deep Core Muscle Vibration", "Abdominal Wall Stimulation", "Diaphragm Breathing Pulse", "Solar Plexus Energy Vibration", "Lower Back Support Frequency", "Spinal Column Alignment"]
+    },
+    {
+      id: "hipspelvis",
+      title: "Hips & Pelvic Vibrations",
+      description: "Pelvic floor strengthening and hip mobility enhancement",
+      color: "linear-gradient(45deg, #7c2d12, #a16207)",
+      icon: "🔥",
+      tones: ["Hip Flexor Release Vibration", "Pelvic Floor Strengthening", "Glute Muscle Activation", "Sacral Chakra Physical Pulse", "Hip Joint Mobility Enhancement", "Pelvic Circulation Boost"]
+    },
+    {
+      id: "legsthighs",
+      title: "Legs & Thigh Power",
+      description: "Lower body strength and circulation enhancement",
+      color: "linear-gradient(45deg, #059669, #0891b2)",
+      icon: "🦵",
+      tones: ["Quadriceps Power Vibration", "Hamstring Flexibility Pulse", "Calf Muscle Deep Stimulation", "Thigh Circulation Enhancement", "Knee Joint Repair Frequency", "Leg Lymphatic Drainage"]
+    },
+    {
+      id: "feetankles",
+      title: "Feet & Ankle Foundation",
+      description: "Grounding frequencies and foot arch support therapy",
+      color: "linear-gradient(45deg, #92400e, #a16207)",
+      icon: "🦶",
+      tones: ["Foot Arch Support Vibration", "Ankle Flexibility Enhancement", "Toe Circulation Activation", "Heel Pain Relief Frequency", "Plantar Fascia Healing", "Grounding Earth Connection"]
+    },
+    {
+      id: "organs",
+      title: "Internal Organ Vibration",
+      description: "Visceral therapy and organ function optimization",
+      color: "linear-gradient(45deg, #16a34a, #22c55e)",
+      icon: "🫀",
+      tones: ["Liver Detox Vibration", "Kidney Filtration Enhancement", "Stomach Digestion Pulse", "Intestinal Health Frequency", "Pancreas Function Boost", "Bladder Muscle Tone"]
+    },
+    {
+      id: "musclegroups",
+      title: "Advanced Muscle Therapy",
+      description: "Specialized targeting for fascia, tendons, and ligaments",
+      color: "linear-gradient(45deg, #7c2d12, #dc2626)",
+      icon: "💪",
+      tones: ["Deep Fascia Release", "Muscle Fiber Regeneration", "Tendon Strength Enhancement", "Ligament Flexibility Boost", "Joint Cartilage Repair", "Bone Density Vibration"]
+    },
+    {
+      id: "circulation",
+      title: "Blood & Circulation",
+      description: "Vascular resonance and circulatory system optimization",
+      color: "linear-gradient(45deg, #dc2626, #ef4444)",
+      icon: "🩸",
+      tones: ["Blood Flow Acceleration", "Arterial Health Vibration", "Venous Return Enhancement", "Capillary Microcirculation", "Heart Rate Variability", "Blood Pressure Regulation"]
+    },
+    {
+      id: "nervous",
+      title: "Nervous System Vibration",
+      description: "Neural network activation and autonomic balance",
+      color: "linear-gradient(45deg, #8b5cf6, #a855f7)",
+      icon: "⚡",
+      tones: ["Central Nervous System Tune", "Peripheral Nerve Activation", "Autonomic Balance Frequency", "Parasympathetic Activation", "Sympathetic Regulation", "Neurotransmitter Balance"]
     }
   ];
 
