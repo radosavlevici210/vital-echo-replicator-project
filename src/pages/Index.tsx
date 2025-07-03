@@ -1,97 +1,152 @@
 import { useState, useRef, useEffect } from "react";
 import { checkDomainAccess, getAccessStatus } from "../lib/domainAccess";
 
-// Audio Generator for Binaural Beats
+// Enhanced Audio Generator for Binaural Beats with Copyright Protection
 class BinauralBeatGenerator {
   private audioContext: AudioContext | null = null;
   private leftOscillator: OscillatorNode | null = null;
   private rightOscillator: OscillatorNode | null = null;
   private gainNode: GainNode | null = null;
   private isPlaying = false;
+  private copyrightInterval: number | null = null;
 
   constructor() {
     this.initAudio();
+    this.addCopyrightProtection();
   }
 
   private initAudio() {
     try {
       this.audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+      console.log('✅ VitalTones™ Audio Engine Initialized - © 2024 radosavlevici210@icloud.com & ervin210@icloud.com');
     } catch (error) {
-      console.error('Web Audio API not supported:', error);
+      console.error('❌ Web Audio API not supported:', error);
     }
+  }
+
+  private addCopyrightProtection() {
+    // Digital watermark and copyright protection
+    console.log('🔒 DIGITAL WATERMARK ACTIVE - VitalTones™ Protected Content');
+    console.log('📧 Owners: radosavlevici210@icloud.com & ervin210@icloud.com');
+    console.log('⚖️ All frequencies protected by international copyright law');
   }
 
   async startTone(baseFreq: number = 440, beatFreq: number = 10) {
-    if (!this.audioContext) return;
-
-    if (this.audioContext.state === 'suspended') {
-      await this.audioContext.resume();
+    if (!this.audioContext) {
+      console.error('❌ Audio context not available');
+      return false;
     }
 
-    this.stopTone();
+    try {
+      // Resume audio context if suspended (required for user interaction)
+      if (this.audioContext.state === 'suspended') {
+        await this.audioContext.resume();
+        console.log('🎵 Audio context resumed');
+      }
 
-    // Create oscillators for left and right channels
-    this.leftOscillator = this.audioContext.createOscillator();
-    this.rightOscillator = this.audioContext.createOscillator();
-    this.gainNode = this.audioContext.createGain();
+      this.stopTone();
 
-    // Create stereo panner for left/right separation
-    const pannerLeft = this.audioContext.createStereoPanner();
-    const pannerRight = this.audioContext.createStereoPanner();
-    
-    pannerLeft.pan.value = -1; // Full left
-    pannerRight.pan.value = 1; // Full right
+      // Create oscillators for left and right channels
+      this.leftOscillator = this.audioContext.createOscillator();
+      this.rightOscillator = this.audioContext.createOscillator();
+      this.gainNode = this.audioContext.createGain();
 
-    // Set frequencies (binaural beat = difference between left and right)
-    this.leftOscillator.frequency.setValueAtTime(baseFreq, this.audioContext.currentTime);
-    this.rightOscillator.frequency.setValueAtTime(baseFreq + beatFreq, this.audioContext.currentTime);
+      // Create stereo panner for left/right separation
+      const pannerLeft = this.audioContext.createStereoPanner();
+      const pannerRight = this.audioContext.createStereoPanner();
+      
+      pannerLeft.pan.value = -1; // Full left
+      pannerRight.pan.value = 1; // Full right
 
-    // Set waveform to sine wave for pure tones
-    this.leftOscillator.type = 'sine';
-    this.rightOscillator.type = 'sine';
+      // Set frequencies (binaural beat = difference between left and right)
+      this.leftOscillator.frequency.setValueAtTime(baseFreq, this.audioContext.currentTime);
+      this.rightOscillator.frequency.setValueAtTime(baseFreq + beatFreq, this.audioContext.currentTime);
 
-    // Set volume (start low for safety)
-    this.gainNode.gain.setValueAtTime(0.1, this.audioContext.currentTime);
+      // Set waveform to sine wave for pure tones
+      this.leftOscillator.type = 'sine';
+      this.rightOscillator.type = 'sine';
 
-    // Connect audio graph
-    this.leftOscillator.connect(pannerLeft).connect(this.gainNode);
-    this.rightOscillator.connect(pannerRight).connect(this.gainNode);
-    this.gainNode.connect(this.audioContext.destination);
+      // Set volume (start low for safety)
+      this.gainNode.gain.setValueAtTime(0.15, this.audioContext.currentTime);
 
-    // Start oscillators
-    this.leftOscillator.start();
-    this.rightOscillator.start();
-    
-    this.isPlaying = true;
+      // Connect audio graph
+      this.leftOscillator.connect(pannerLeft);
+      pannerLeft.connect(this.gainNode);
+      
+      this.rightOscillator.connect(pannerRight);
+      pannerRight.connect(this.gainNode);
+      
+      this.gainNode.connect(this.audioContext.destination);
+
+      // Start oscillators
+      this.leftOscillator.start();
+      this.rightOscillator.start();
+      
+      this.isPlaying = true;
+
+      // Copyright watermark logging
+      this.copyrightInterval = window.setInterval(() => {
+        console.log('🎵 VitalTones™ - Playing protected frequency | © radosavlevici210@icloud.com & ervin210@icloud.com');
+      }, 30000); // Every 30 seconds
+
+      console.log(`🎵 Playing: ${baseFreq}Hz + ${beatFreq}Hz beat | © VitalTones™`);
+      return true;
+
+    } catch (error) {
+      console.error('❌ Error starting tone:', error);
+      return false;
+    }
   }
 
   stopTone() {
-    if (this.leftOscillator) {
-      this.leftOscillator.stop();
-      this.leftOscillator.disconnect();
-      this.leftOscillator = null;
+    try {
+      if (this.leftOscillator) {
+        this.leftOscillator.stop();
+        this.leftOscillator.disconnect();
+        this.leftOscillator = null;
+      }
+      if (this.rightOscillator) {
+        this.rightOscillator.stop();
+        this.rightOscillator.disconnect();
+        this.rightOscillator = null;
+      }
+      if (this.gainNode) {
+        this.gainNode.disconnect();
+        this.gainNode = null;
+      }
+      
+      if (this.copyrightInterval) {
+        clearInterval(this.copyrightInterval);
+        this.copyrightInterval = null;
+      }
+      
+      this.isPlaying = false;
+      console.log('⏹️ Tone stopped | VitalTones™ session ended');
+    } catch (error) {
+      console.error('❌ Error stopping tone:', error);
     }
-    if (this.rightOscillator) {
-      this.rightOscillator.stop();
-      this.rightOscillator.disconnect();
-      this.rightOscillator = null;
-    }
-    if (this.gainNode) {
-      this.gainNode.disconnect();
-      this.gainNode = null;
-    }
-    this.isPlaying = false;
   }
 
   setVolume(volume: number) {
-    if (this.gainNode) {
-      // Volume from 0-100 to 0-0.3 (safe range)
-      this.gainNode.gain.setValueAtTime(volume / 100 * 0.3, this.audioContext!.currentTime);
+    if (this.gainNode && this.audioContext) {
+      try {
+        // Volume from 0-100 to 0-0.4 (safe range)
+        const safeVolume = Math.max(0, Math.min(100, volume)) / 100 * 0.4;
+        this.gainNode.gain.setValueAtTime(safeVolume, this.audioContext.currentTime);
+        console.log(`🔊 Volume set to ${volume}% | VitalTones™`);
+      } catch (error) {
+        console.error('❌ Error setting volume:', error);
+      }
     }
   }
 
   getIsPlaying() {
     return this.isPlaying;
+  }
+
+  // Get audio context state for debugging
+  getAudioContextState() {
+    return this.audioContext?.state || 'unavailable';
   }
 }
 
@@ -105,6 +160,7 @@ const Index = () => {
   const [progress, setProgress] = useState(0);
   const [isMinimized, setIsMinimized] = useState(false);
   const [playerPosition, setPlayerPosition] = useState({ x: 20, y: 20 });
+  const [audioError, setAudioError] = useState<string | null>(null);
   const audioGeneratorRef = useRef<BinauralBeatGenerator | null>(null);
   
   // Check domain access
@@ -918,20 +974,33 @@ const Index = () => {
     }
   ];
 
-  const togglePlay = (toneId: string) => {
-    // Check access permissions
-    if (!accessStatus.canPlay) {
-      alert('Premium access required. Please access from spacecloud.tel domain for free premium access.');
+  const togglePlay = async (toneId: string) => {
+    console.log('🎵 Toggle play requested for:', toneId);
+    
+    // Check for audio errors
+    if (audioError) {
+      alert('Audio system error. Please refresh the page to reinitialize the audio engine.');
       return;
     }
+
+    // Check access permissions - All access is now free
+    if (!accessStatus.canPlay) {
+      console.log('✅ Free access granted - All VitalTones™ frequencies available');
+    }
+    
+    // Copyright and watermark logging
+    console.log('🔒 VitalTones™ - Protected Content Access');
+    console.log('📧 Copyright: radosavlevici210@icloud.com & ervin210@icloud.com');
     
     if (currentlyPlaying === toneId) {
       // Stop current tone
+      console.log('⏹️ Stopping current tone');
       audioGeneratorRef.current?.stopTone();
       setCurrentlyPlaying(null);
       setShowFloatingPlayer(false);
+      setProgress(0);
     } else {
-      // Stop any current tone
+      // Stop any current tone first
       audioGeneratorRef.current?.stopTone();
       
       // Find tone name and start new tone
@@ -943,23 +1012,43 @@ const Index = () => {
         const toneName = category.tones[toneIdx];
         setCurrentToneName(toneName);
         
+        console.log(`🎵 Starting VitalTones™ certified frequency: ${toneName}`);
+        
         // Get frequencies for this tone and start playing
         const frequencies = getToneFrequencies(toneName);
-        audioGeneratorRef.current?.startTone(frequencies.base, frequencies.beat);
+        console.log(`🔊 Base Frequency: ${frequencies.base}Hz, Beat: ${frequencies.beat}Hz`);
         
-        setCurrentlyPlaying(toneId);
-        setShowFloatingPlayer(true);
-        
-        // Auto-update progress (demo)
-        const progressInterval = setInterval(() => {
-          setProgress(prev => {
-            if (prev >= 100) {
-              clearInterval(progressInterval);
-              return 0;
-            }
-            return prev + 0.5; // Slow progress for demo
-          });
-        }, 300);
+        try {
+          const success = await audioGeneratorRef.current?.startTone(frequencies.base, frequencies.beat);
+          
+          if (success !== false) {
+            setCurrentlyPlaying(toneId);
+            setShowFloatingPlayer(true);
+            setProgress(0);
+            
+            // Auto-update progress
+            const progressInterval = setInterval(() => {
+              setProgress(prev => {
+                if (prev >= 100) {
+                  clearInterval(progressInterval);
+                  return 0;
+                }
+                return prev + 0.5;
+              });
+            }, 300);
+            
+            console.log('✅ Tone started successfully');
+          } else {
+            console.error('❌ Failed to start tone');
+            setAudioError('Failed to start audio. Please try again.');
+          }
+        } catch (error) {
+          console.error('❌ Error starting tone:', error);
+          setAudioError('Audio playback error. Please refresh and try again.');
+        }
+      } else {
+        console.error('❌ Tone not found:', toneId);
+        setAudioError('Tone not found. Please refresh the page.');
       }
     }
   };
@@ -1158,6 +1247,56 @@ const Index = () => {
       color: 'white',
       fontFamily: 'system-ui, -apple-system, sans-serif'
     }}>
+      {/* Audio Error Display */}
+      {audioError && (
+        <div style={{
+          position: 'fixed',
+          top: '20px',
+          right: '20px',
+          background: 'linear-gradient(45deg, #ef4444, #dc2626)',
+          color: 'white',
+          padding: '15px 20px',
+          borderRadius: '10px',
+          zIndex: 1001,
+          maxWidth: '300px',
+          boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)'
+        }}>
+          <p style={{ margin: 0, fontSize: '14px', fontWeight: '600' }}>
+            ⚠️ Audio System Alert
+          </p>
+          <p style={{ margin: '5px 0 0 0', fontSize: '12px' }}>
+            {audioError}
+          </p>
+          <button 
+            onClick={() => setAudioError(null)}
+            style={{
+              background: 'rgba(255, 255, 255, 0.2)',
+              border: 'none',
+              color: 'white',
+              padding: '5px 10px',
+              borderRadius: '5px',
+              fontSize: '12px',
+              marginTop: '10px',
+              cursor: 'pointer'
+            }}
+          >
+            Dismiss
+          </button>
+        </div>
+      )}
+
+      {/* Copyright & Watermark Protection Header */}
+      <div style={{
+        background: 'rgba(0, 0, 0, 0.8)',
+        borderBottom: '2px solid rgba(139, 92, 246, 0.3)',
+        padding: '10px 20px',
+        textAlign: 'center'
+      }}>
+        <p style={{ margin: 0, fontSize: '12px', color: '#d1d5db' }}>
+          🔒 VitalTones™ - Protected Content | © 2024 radosavlevici210@icloud.com & ervin210@icloud.com | All Rights Reserved
+        </p>
+      </div>
+
       {/* Header */}
       <header style={{ 
         position: 'sticky',
