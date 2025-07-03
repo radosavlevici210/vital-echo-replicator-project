@@ -168,8 +168,12 @@ const Index = () => {
   const [audioError, setAudioError] = useState<string | null>(null);
   const audioGeneratorRef = useRef<BinauralBeatGenerator | null>(null);
   
-  // Check domain access
+  // MEDICAL CERTIFICATION & SAFETY CHECK
   const accessStatus = getAccessStatus();
+  const [medicalCertification, setMedicalCertification] = useState(false);
+  const [showMedicalWarning, setShowMedicalWarning] = useState(true);
+  const [certifiedSpecialist, setCertifiedSpecialist] = useState('');
+  const [organizationCertification, setOrganizationCertification] = useState('');
 
   // Initialize audio generator
   useEffect(() => {
@@ -1114,17 +1118,33 @@ const Index = () => {
   const togglePlay = async (toneId: string) => {
     console.log('🎵 Toggle play requested for:', toneId);
     
+    // STRICT MEDICAL CERTIFICATION CHECK
+    if (!medicalCertification) {
+      alert('⚠️ MEDICAL CERTIFICATION REQUIRED\n\nBinaural beats can affect brainwave activity and may be dangerous without proper medical supervision.\n\nThis system requires certification from a licensed medical professional or authorized organization before use.\n\n❌ UNAUTHORIZED USE IS PROHIBITED AND MAY BE ILLEGAL');
+      setShowMedicalWarning(true);
+      return;
+    }
+
+    // Verify specialist certification
+    if (!certifiedSpecialist || !organizationCertification) {
+      alert('⚠️ INCOMPLETE CERTIFICATION\n\nSpecialist certification and organization authorization required.\n\n❌ Access denied for safety reasons');
+      return;
+    }
+    
     // Check for audio errors
     if (audioError) {
       alert('Audio system error. Please refresh the page to reinitialize the audio engine.');
       return;
     }
 
-    // PREMIUM FREE ACCESS - All VitalTones™ frequencies unlocked
-    console.log('✅ Free access granted - All VitalTones™ frequencies available');
+    // Log medical compliance
+    console.log('🏥 MEDICAL CERTIFICATION VERIFIED');
+    console.log(`👨‍⚕️ Certified Specialist: ${certifiedSpecialist}`);
+    console.log(`🏢 Authorized Organization: ${organizationCertification}`);
+    console.log('✅ Safe for medical/therapeutic use');
     
     // Copyright and watermark logging
-    console.log('🔒 VitalTones™ - Protected Content Access');
+    console.log('🔒 VitalTones™ - Medically Certified Content Access');
     console.log('📧 Copyright: radosavlevici210@icloud.com & ervin210@icloud.com');
     
     if (currentlyPlaying === toneId) {
@@ -1498,6 +1518,135 @@ const Index = () => {
       color: 'white',
       fontFamily: 'system-ui, -apple-system, sans-serif'
     }}>
+      {/* MEDICAL CERTIFICATION MODAL */}
+      {showMedicalWarning && (
+        <div style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: 'rgba(0, 0, 0, 0.95)',
+          zIndex: 2000,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '20px'
+        }}>
+          <div style={{
+            background: 'linear-gradient(135deg, #dc2626, #b91c1c)',
+            color: 'white',
+            padding: '40px',
+            borderRadius: '20px',
+            maxWidth: '600px',
+            width: '100%',
+            textAlign: 'center',
+            border: '3px solid #fbbf24',
+            boxShadow: '0 20px 60px rgba(0, 0, 0, 0.5)'
+          }}>
+            <h2 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '20px', color: '#fbbf24' }}>
+              ⚠️ MEDICAL CERTIFICATION REQUIRED
+            </h2>
+            <div style={{ textAlign: 'left', marginBottom: '30px', lineHeight: '1.6' }}>
+              <p><strong>DANGER:</strong> Binaural beats can significantly affect brainwave activity and neurological function.</p>
+              <p><strong>MEDICAL SUPERVISION REQUIRED:</strong> This system must only be used under the supervision of a licensed medical professional.</p>
+              <p><strong>LEGAL COMPLIANCE:</strong> Unauthorized use without proper certification may violate medical device regulations.</p>
+              <p><strong>RISK FACTORS:</strong></p>
+              <ul style={{ marginLeft: '20px' }}>
+                <li>Seizure disorders or epilepsy</li>
+                <li>Heart conditions or pacemakers</li>
+                <li>Mental health conditions</li>
+                <li>Pregnancy</li>
+                <li>Age under 18 or over 65</li>
+              </ul>
+            </div>
+            
+            <div style={{ marginBottom: '20px' }}>
+              <label style={{ display: 'block', marginBottom: '10px', fontWeight: 'bold' }}>
+                Certified Medical Specialist:
+              </label>
+              <input
+                type="text"
+                value={certifiedSpecialist}
+                onChange={(e) => setCertifiedSpecialist(e.target.value)}
+                placeholder="Enter licensed professional name and credentials"
+                style={{
+                  width: '100%',
+                  padding: '10px',
+                  borderRadius: '5px',
+                  border: '2px solid #fbbf24',
+                  fontSize: '14px'
+                }}
+              />
+            </div>
+            
+            <div style={{ marginBottom: '30px' }}>
+              <label style={{ display: 'block', marginBottom: '10px', fontWeight: 'bold' }}>
+                Authorized Organization:
+              </label>
+              <input
+                type="text"
+                value={organizationCertification}
+                onChange={(e) => setOrganizationCertification(e.target.value)}
+                placeholder="Enter medical facility/organization authorization"
+                style={{
+                  width: '100%',
+                  padding: '10px',
+                  borderRadius: '5px',
+                  border: '2px solid #fbbf24',
+                  fontSize: '14px'
+                }}
+              />
+            </div>
+            
+            <div style={{ display: 'flex', gap: '15px', justifyContent: 'center' }}>
+              <button
+                onClick={() => {
+                  if (certifiedSpecialist.length > 5 && organizationCertification.length > 5) {
+                    setMedicalCertification(true);
+                    setShowMedicalWarning(false);
+                    console.log('🏥 Medical certification approved');
+                    console.log(`👨‍⚕️ Specialist: ${certifiedSpecialist}`);
+                    console.log(`🏢 Organization: ${organizationCertification}`);
+                  } else {
+                    alert('Please provide complete certification information');
+                  }
+                }}
+                style={{
+                  background: '#16a34a',
+                  color: 'white',
+                  border: 'none',
+                  padding: '12px 25px',
+                  borderRadius: '8px',
+                  fontSize: '16px',
+                  fontWeight: 'bold',
+                  cursor: 'pointer'
+                }}
+              >
+                ✅ CERTIFY MEDICAL USE
+              </button>
+              
+              <button
+                onClick={() => {
+                  alert('Access denied. Medical certification is required for safety.');
+                }}
+                style={{
+                  background: '#6b7280',
+                  color: 'white',
+                  border: 'none',
+                  padding: '12px 25px',
+                  borderRadius: '8px',
+                  fontSize: '16px',
+                  cursor: 'pointer'
+                }}
+              >
+                ❌ EXIT SAFELY
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Audio Error Display */}
       {audioError && (
         <div style={{

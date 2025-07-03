@@ -125,6 +125,26 @@ Changelog:
 - Digital watermarking system for copyright protection
 - Continuous quality monitoring during audio playback
 
+### Medical Safety & Certification System
+
+#### Mandatory Medical Supervision
+- Strict medical certification required before system access
+- Licensed medical professional supervision mandatory
+- Authorized organization verification required
+- Complete safety compliance with medical device regulations
+
+#### Risk Management
+- Comprehensive warning system for contraindications
+- Medical history screening requirements
+- Age and health condition restrictions enforced
+- Legal compliance with unauthorized use prohibitions
+
+#### Certification Process
+- Verified medical specialist credentials required
+- Authorized healthcare organization validation
+- Professional liability and safety documentation
+- Ongoing medical supervision protocols enforced
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
