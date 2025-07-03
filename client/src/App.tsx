@@ -1,14 +1,12 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Route, Switch } from "wouter";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
 const App = () => (
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Index />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
-  </BrowserRouter>
+  <Switch>
+    <Route path="/" component={Index} />
+    <Route component={NotFound} />
+  </Switch>
 );
 
 export default App;
