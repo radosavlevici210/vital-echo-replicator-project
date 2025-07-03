@@ -472,7 +472,126 @@ const Index = () => {
       "Autonomic Balance Frequency": { base: 741, beat: 24 }, // Expression + autonomic
       "Parasympathetic Activation": { base: 528, beat: 3 }, // Love + parasympathetic
       "Sympathetic Regulation": { base: 396, beat: 12 }, // Liberation + sympathetic
-      "Neurotransmitter Balance": { base: 639, beat: 16 } // Connection + neurotransmitters
+      "Neurotransmitter Balance": { base: 639, beat: 16 }, // Connection + neurotransmitters
+
+      // NEW EXCLUSIVE PLATINUM COLLECTION - 2025 LATEST DISCOVERIES
+      
+      // Ultra-Advanced Cognitive Enhancement
+      "Quantum Learning Accelerator": { base: 1111, beat: 44 }, // Master number + advanced gamma
+      "Superhuman Pattern Recognition": { base: 777, beat: 33 }, // Lucky number + pattern gamma
+      "Instant Skill Acquisition": { base: 999, beat: 39 }, // Completion + skill gamma
+      "Perfect Memory Encoding": { base: 888, beat: 36 }, // Abundance + memory gamma
+      "Genius Problem Solving": { base: 666, beat: 30 }, // Material + problem gamma
+      "Superhuman Calculation": { base: 555, beat: 27 }, // Change + math gamma
+      "Perfect Language Processing": { base: 444, beat: 24 }, // Foundation + language gamma
+      "Ultimate Focus Enhancement": { base: 333, beat: 21 }, // Expression + focus gamma
+      
+      // Time Manipulation Mastery
+      "Time Perception Control": { base: 432, beat: 8.5 }, // Natural + time control
+      "Temporal Awareness Boost": { base: 528, beat: 4.5 }, // Love + temporal
+      "Chronesthetic Enhancement": { base: 741, beat: 6.5 }, // Expression + time sense
+      "Time Dilation Experience": { base: 852, beat: 3.5 }, // Intuition + dilation
+      "Temporal Flow Mastery": { base: 396, beat: 5.5 }, // Liberation + flow
+      "Time-Space Synchronization": { base: 639, beat: 7.5 }, // Connection + sync
+      "Chronological Optimization": { base: 963, beat: 2.5 }, // Crown + optimization
+      "Master Time Controller": { base: 285, beat: 9.5 }, // Transformation + control
+      
+      // Reality Engineering Protocols
+      "Reality Matrix Access": { base: 1212, beat: 48 }, // Portal + matrix gamma
+      "Dimensional Engineering Protocol": { base: 1010, beat: 42 }, // Binary + engineering
+      "Reality Firewall Bypass": { base: 808, beat: 36 }, // Infinity + bypass
+      "Quantum Physics Override": { base: 707, beat: 33 }, // Spiritual + physics
+      "Reality Database Access": { base: 606, beat: 30 }, // Love + database
+      "Universal Constants Editor": { base: 505, beat: 27 }, // Freedom + constants
+      "Quantum Field Debugger": { base: 404, beat: 24 }, // Foundation + debug
+      "Reality Version Control": { base: 303, beat: 21 }, // Trinity + version
+      "Dimensional Merge Protocol": { base: 202, beat: 18 }, // Duality + merge
+      "Quantum Reality Backup": { base: 101, beat: 15 }, // Unity + backup
+      
+      // Infinite Intelligence Protocol
+      "Infinite Intelligence Protocol": { base: 1369, beat: 50 }, // 37^2 + infinite gamma
+      "Cosmic Knowledge Network": { base: 1225, beat: 47 }, // 35^2 + cosmic gamma
+      "Universal Information Grid": { base: 1089, beat: 44 }, // 33^2 + universal gamma
+      "Quantum Wisdom Matrix": { base: 961, beat: 41 }, // 31^2 + wisdom gamma
+      "Omniscient Data Stream": { base: 841, beat: 38 }, // 29^2 + omniscient gamma
+      "Universal Truth Frequency": { base: 729, beat: 35 }, // 27^2 + truth gamma
+      "Infinite Learning Accelerator": { base: 625, beat: 32 }, // 25^2 + learning gamma
+      "Cosmic Intelligence Multiplier": { base: 529, beat: 29 }, // 23^2 + intelligence gamma
+      "Universal Mind Access": { base: 441, beat: 26 }, // 21^2 + mind gamma
+      "Quantum Knowledge Synthesizer": { base: 361, beat: 23 }, // 19^2 + synthesis gamma
+      "Infinite Pattern Recognition": { base: 289, beat: 20 }, // 17^2 + pattern gamma
+      "Universal Understanding": { base: 225, beat: 17 }, // 15^2 + understanding gamma
+      "Cosmic Insight Generator": { base: 169, beat: 14 }, // 13^2 + insight gamma
+      "Infinite Problem Solver": { base: 121, beat: 11 }, // 11^2 + problem gamma
+      "Universal Genius Activation": { base: 81, beat: 8 }, // 9^2 + genius gamma
+      
+      // Molecular Reconstruction Lab
+      "Molecular Reconstruction Protocol": { base: 1618, beat: 55 }, // Golden ratio * 1000 + molecular gamma
+      "Atomic Healing Matrix": { base: 1414, beat: 52 }, // sqrt(2) * 1000 + atomic gamma
+      "Quantum DNA Editor": { base: 1732, beat: 58 }, // sqrt(3) * 1000 + DNA gamma
+      "Subatomic Repair System": { base: 2236, beat: 62 }, // sqrt(5) * 1000 + subatomic gamma
+      "Molecular Regeneration Engine": { base: 2449, beat: 65 }, // sqrt(6) * 1000 + regen gamma
+      "Quantum Cellular Factory": { base: 2646, beat: 68 }, // sqrt(7) * 1000 + cellular gamma
+      "Atomic Structure Optimizer": { base: 2828, beat: 71 }, // sqrt(8) * 1000 + structure gamma
+      "Molecular Bond Healer": { base: 3000, beat: 74 }, // Perfect + bond gamma
+      "Quantum Protein Synthesizer": { base: 3162, beat: 77 }, // sqrt(10) * 1000 + protein gamma
+      "DNA Quantum Compiler": { base: 3317, beat: 80 }, // sqrt(11) * 1000 + compiler gamma
+      "Molecular Age Reversal": { base: 3464, beat: 83 }, // sqrt(12) * 1000 + age gamma
+      "Atomic Youth Protocol": { base: 3606, beat: 86 }, // sqrt(13) * 1000 + youth gamma
+      "Quantum Gene Expression": { base: 3742, beat: 89 }, // sqrt(14) * 1000 + gene gamma
+      "Molecular Immortality Code": { base: 3873, beat: 92 }, // sqrt(15) * 1000 + immortality gamma
+      "Atomic Perfect Health": { base: 4000, beat: 95 }, // Perfect health + atomic gamma
+      
+      // Psychic Mastery Laboratory
+      "Advanced Remote Viewing": { base: 1111, beat: 13 }, // Master + psychic alpha
+      "Psychokinetic Power Boost": { base: 2222, beat: 14 }, // Double master + telekinesis
+      "Advanced Telepathic Communication": { base: 3333, beat: 15 }, // Triple master + telepathy
+      "Precognitive Vision Enhancement": { base: 4444, beat: 16 }, // Quad master + precognition
+      "Astral Travel Command": { base: 5555, beat: 17 }, // Penta master + astral
+      "Psychic Shield Generator": { base: 6666, beat: 18 }, // Hexa master + shield
+      "Clairvoyant Sight Activation": { base: 7777, beat: 19 }, // Septa master + clairvoyance
+      "Mind Reading Protocol": { base: 8888, beat: 20 }, // Octa master + mind reading
+      "Telekinetic Force Field": { base: 9999, beat: 21 }, // Nona master + telekinesis
+      "Psychic Energy Amplifier": { base: 1234, beat: 22 }, // Sequential + amplifier
+      "Supernatural Sense Boost": { base: 5678, beat: 23 }, // Sequential 2 + senses
+      "Paranormal Ability Unlock": { base: 9876, beat: 24 }, // Reverse + paranormal
+      "Psychic Warfare Defense": { base: 4321, beat: 25 }, // Reverse 2 + defense
+      "ESP Enhancement Matrix": { base: 1357, beat: 26 }, // Odd sequence + ESP
+      "Supernatural Power Grid": { base: 2468, beat: 27 }, // Even sequence + power
+      
+      // Dimensional Travel Network
+      "Dimensional Portal Activator": { base: 11111, beat: 111 }, // Portal master + ultimate gamma
+      "Interdimensional Gateway": { base: 22222, beat: 122 }, // Gateway master + interdimensional
+      "Reality Shift Protocol": { base: 33333, beat: 133 }, // Shift master + reality
+      "Multiverse Navigation System": { base: 44444, beat: 144 }, // Navigation master + multiverse
+      "Dimensional Anchor Point": { base: 55555, beat: 155 }, // Anchor master + dimensional
+      "Reality Stream Surfer": { base: 66666, beat: 166 }, // Surfer master + stream
+      "Quantum Dimension Hopper": { base: 77777, beat: 177 }, // Hopper master + quantum
+      "Parallel Universe Scanner": { base: 88888, beat: 188 }, // Scanner master + parallel
+      "Dimensional Frequency Tuner": { base: 99999, beat: 199 }, // Tuner master + frequency
+      "Reality Coordinates Finder": { base: 12345, beat: 123 }, // Finder sequential + coordinates
+      "Interdimensional Translator": { base: 67890, beat: 134 }, // Translator sequential + interdimensional
+      "Multiverse Explorer": { base: 13579, beat: 145 }, // Explorer odd + multiverse
+      "Dimensional Passport Protocol": { base: 24680, beat: 156 }, // Passport even + dimensional
+      "Reality Bridge Constructor": { base: 97531, beat: 167 }, // Constructor reverse + reality
+      "Quantum Realm Access": { base: 86420, beat: 178 }, // Access reverse 2 + quantum
+      
+      // Biological Optimization Center
+      "Genetic Optimization Protocol": { base: 1618, beat: 34 }, // Golden ratio + genetic gamma
+      "Superhuman Strength Matrix": { base: 2718, beat: 37 }, // e * 1000 + strength gamma
+      "Enhanced Reflexes Boost": { base: 3142, beat: 40 }, // pi * 1000 + reflexes gamma
+      "Perfect Vision Restoration": { base: 1414, beat: 31 }, // sqrt(2) * 1000 + vision gamma
+      "Superhearing Activation": { base: 1732, beat: 28 }, // sqrt(3) * 1000 + hearing gamma
+      "Enhanced Taste & Smell": { base: 2236, beat: 25 }, // sqrt(5) * 1000 + taste gamma
+      "Accelerated Healing Factor": { base: 2449, beat: 22 }, // sqrt(6) * 1000 + healing gamma
+      "Disease Immunity Boost": { base: 2646, beat: 19 }, // sqrt(7) * 1000 + immunity gamma
+      "Longevity Gene Activation": { base: 2828, beat: 16 }, // sqrt(8) * 1000 + longevity gamma
+      "Perfect Health Maintenance": { base: 3000, beat: 13 }, // Perfect + health gamma
+      "Enhanced Metabolism": { base: 3162, beat: 10 }, // sqrt(10) * 1000 + metabolism gamma
+      "Superhuman Endurance": { base: 3317, beat: 7 }, // sqrt(11) * 1000 + endurance gamma
+      "Genetic Perfection Code": { base: 3464, beat: 4 }, // sqrt(12) * 1000 + genetic gamma
+      "Biological Prime State": { base: 3606, beat: 1 }, // sqrt(13) * 1000 + prime gamma
+      "Enhanced Human Evolution": { base: 3742, beat: 43 } // sqrt(14) * 1000 + evolution gamma
     };
 
     return toneMap[toneName] || { base: 440, beat: 10 };
@@ -937,7 +1056,7 @@ const Index = () => {
       color: "linear-gradient(45deg, #7c3aed, #5b21b6)",
       icon: "🔮",
       tones: [
-        "Remote Viewing Mastery", "Psychokinetic Power Boost", "Telepathic Communication", 
+        "Advanced Remote Viewing", "Psychokinetic Power Boost", "Advanced Telepathic Communication", 
         "Precognitive Vision Enhancement", "Astral Travel Command", "Psychic Shield Generator",
         "Clairvoyant Sight Activation", "Mind Reading Protocol", "Telekinetic Force Field",
         "Psychic Energy Amplifier", "Supernatural Sense Boost", "Paranormal Ability Unlock",
@@ -983,10 +1102,8 @@ const Index = () => {
       return;
     }
 
-    // Check access permissions - All access is now free
-    if (!accessStatus.canPlay) {
-      console.log('✅ Free access granted - All VitalTones™ frequencies available');
-    }
+    // PREMIUM FREE ACCESS - All VitalTones™ frequencies unlocked
+    console.log('✅ Free access granted - All VitalTones™ frequencies available');
     
     // Copyright and watermark logging
     console.log('🔒 VitalTones™ - Protected Content Access');
@@ -1003,13 +1120,40 @@ const Index = () => {
       // Stop any current tone first
       audioGeneratorRef.current?.stopTone();
       
-      // Find tone name and start new tone
-      const [categoryId, index] = toneId.split('-');
-      const category = toneCategories.find(cat => cat.id === categoryId);
-      const toneIdx = parseInt(index);
+      // Parse tone ID correctly - handle both old and new format
+      let toneName = '';
+      let foundTone = false;
       
-      if (category && category.tones[toneIdx]) {
-        const toneName = category.tones[toneIdx];
+      // Try new format first: category-index
+      const [categoryId, indexStr] = toneId.split('-');
+      const toneIdx = parseInt(indexStr);
+      
+      if (!isNaN(toneIdx)) {
+        const category = toneCategories.find(cat => cat.id === categoryId);
+        if (category && category.tones[toneIdx]) {
+          toneName = category.tones[toneIdx];
+          foundTone = true;
+        }
+      }
+      
+      // If not found, try direct tone name lookup
+      if (!foundTone) {
+        // Search through all categories for the tone name
+        for (const category of toneCategories) {
+          for (const tone of category.tones) {
+            if (tone.toLowerCase().replace(/[^a-z0-9]/g, '-') === toneId.toLowerCase() ||
+                tone.toLowerCase().replace(/\s+/g, '-') === toneId.toLowerCase() ||
+                tone === toneId) {
+              toneName = tone;
+              foundTone = true;
+              break;
+            }
+          }
+          if (foundTone) break;
+        }
+      }
+      
+      if (foundTone && toneName) {
         setCurrentToneName(toneName);
         
         console.log(`🎵 Starting VitalTones™ certified frequency: ${toneName}`);
@@ -1048,6 +1192,8 @@ const Index = () => {
         }
       } else {
         console.error('❌ Tone not found:', toneId);
+        // List all available tones for debugging
+        console.log('Available tones:', toneCategories.flatMap(cat => cat.tones));
         setAudioError('Tone not found. Please refresh the page.');
       }
     }
